@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>EduGram | Full-screen Document Viewer</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>EduGram | Full-screen Document Viewer</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -21,12 +26,12 @@
                     fontFamily: {
                         "display": ["Plus Jakarta Sans"]
                     },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
                 },
             },
         }
     </script>
-<style type="text/tailwindcss">
+    <style type="text/tailwindcss">
         @layer base {
             body { font-family: 'Plus Jakarta Sans', sans-serif; }
         }
@@ -40,10 +45,25 @@
             border-left: 1px solid rgba(0, 0, 0, 0.08);
         }
         .btn-black-primary {
-            @apply bg-black text-white hover:bg-zinc-800 transition-all duration-200 font-bold;
+            background-color: black;
+            color: white;
+            transition-property: all;
+            transition-duration: 200ms;
+            font-weight: 700;
+        }
+        .btn-black-primary:hover {
+            background-color: #27272a; /* zinc-800 */
         }
         .btn-black-secondary {
-            @apply bg-transparent text-black border border-black/10 hover:bg-black/5 transition-all duration-200 font-bold;
+            background-color: transparent;
+            color: black;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition-property: all;
+            transition-duration: 200ms;
+            font-weight: 700;
+        }
+        .btn-black-secondary:hover {
+            background-color: rgba(0, 0, 0, 0.05);
         }
         .accent-line {
             height: 2px;
@@ -61,173 +81,230 @@
         }
     </style>
 </head>
-<body class="bg-white text-black antialiased overflow-hidden">
-<input class="hidden" id="panel-toggle" type="checkbox"/>
-<div class="flex h-screen w-full relative overflow-hidden flex-col">
-<header class="h-16 fixed top-0 left-0 right-0 flex items-center justify-between px-6 z-[60] bg-white/80 backdrop-blur-md border-b border-black/5">
-<div class="flex items-center gap-8">
-<div class="flex items-center gap-2">
-<div class="size-8">
-<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="url(#brand_grad)"></path>
-<path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="url(#brand_grad)"></path>
-<defs>
-<linearGradient gradientUnits="userSpaceOnUse" id="brand_grad" x1="0" x2="48" y1="0" y2="48">
-<stop stop-color="#0095f6"></stop>
-<stop offset="1" stop-color="#00ff88"></stop>
-</linearGradient>
-</defs>
-</svg>
-</div>
-<h2 class="text-xl font-bold tracking-tight text-black">EduGram</h2>
-</div>
-<div class="relative w-72 hidden lg:block">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-black/40 text-xl">search</span>
-<input class="w-full bg-black/5 border-none rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-1 focus:ring-black/10 text-black placeholder-black/40" placeholder="Search resources..." type="text"/>
-</div>
-</div>
-<div class="flex items-center gap-6">
-<nav class="hidden md:flex gap-6 text-sm font-semibold text-black/60">
-<a class="hover:text-black transition-colors" href="#">Explore</a>
-<a class="hover:text-black transition-colors" href="#">Study Lists</a>
-<a class="hover:text-black transition-colors" href="#">Communities</a>
-</nav>
-<div class="flex items-center gap-4">
-<button class="material-symbols-outlined text-2xl text-black/60 hover:text-black">notifications</button>
-<div class="size-8 rounded-full bg-black/5 p-[1px]">
-<div class="w-full h-full rounded-full bg-cover bg-center border border-white" data-alt="User profile avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbg3G97LzTdLsBz0PBSxD2IIZCOuXs4sxiDxjYG-KBjKklTE7pmYCw2RZMN3COeg8fmSGGuhkCa-IgTOuifkjCKXZLN_FZJueqN7g_rRQWTOjiaeWgfclQnJmfmXmFB8N-LJ9ichr3pvvqXX17D-cM8gz843YJLj8jmGxZAP_hXVRnjCeE2UyKX0Z9zGwwA5tVR9Lji67sWYspBvKxi2kVVGhig3uIv9BBcNPG0FxokwpdoPazgdurjckfCdVJ1LSWxoF4rUMElAE')"></div>
-</div>
-</div>
-</div>
-</header>
-<main class="viewer-content flex-1 flex relative">
-<div class="absolute inset-0 z-0 bg-[#F4F4F5]">
-<div class="h-full w-full overflow-y-auto custom-scrollbar flex flex-col items-center py-20 px-4 space-y-8">
-<img alt="Document Page 1" class="w-full max-w-4xl shadow-xl rounded-sm border border-black/5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARqK91zLxBI52SWK2f2UA4sW3SIMX5B488mOmIzPw2jeUCYcf4gaQrwl74CqrZPwnF06pmRvC2D2ER4Uyli00XVDiATgjt8T9yLpcIjsopdEAlFUePnTfrEM56aMrNhzUo6CTKBlVbeKQGNlGCTbLl2NIe_MaYFie_t_B5yMtOAZyPtGYKcMdEqlqv7_6kVUFR_2nA0CtiXF_FPfFapu1djZb6MFpojoXvEvTiJpDVFUVhjKmTwDVNUyNj0L1SK-zoWTvPMEV6bns"/>
-<img alt="Document Page 2" class="w-full max-w-4xl shadow-xl rounded-sm border border-black/5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL2Sz-6fjysvwGYflfIxeZj82NgM37mzd4YriH_JPnhcJKIRamyzq8-FF-27_tX47hurvT_0aFOArMhHxSLntrGwFPE-eV_zrunhmER8dfHKAVEEpvELmUciNE86cdCZUaDe59C_sZ2e515vrGek4Ageqr0idZqchOJhYsPihmU8IIfLfvpKtjRJvARASN0725VM4Sy2A3bUCabTPb6Rbbr5wxuFbvw2O3KP6B2ZHfH_bxu7g1XT7Qh10UTsv18ddGTOBTmPk3INc"/>
-<div class="relative w-full max-w-4xl">
-<img alt="Blurred Preview" class="w-full opacity-30 blur-lg rounded-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYog_CzHt7XAJrRBxJ4YWE7KliAqiKLXQ4Tj2HTwljEtcG3CkwBmw3xoGjmkGAURA9MzCvp2eEgTqNobRh-mZIuzzg8St-YZC7y6S-YW949TQ5OKQq6Rf5I-s4M9d-m-t4byXO3HxEAH3f8rXf2Y5VNjDJFQMw_WHHCohubSq9kG70KVew9l9gZ4vfhScGy0U3wwXMZIIeUDne0C5w6nwzWk_L5fam5bXX5FabOJTub4xrrLtB4tfIy_g53FfPCMNwctePYA-wo6U"/>
-<div class="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
-<h3 class="text-3xl font-bold mb-4 text-black">Unlock 12 more pages</h3>
-<button class="btn-black-primary px-10 py-4 rounded-xl text-lg shadow-xl hover:scale-[1.02] active:scale-95">Join to view full document</button>
-</div>
-</div>
-</div>
-</div>
-<div class="toggle-handle-wrapper fixed right-[400px] top-1/2 -translate-y-1/2 z-[70] transition-all duration-300">
-<label class="cursor-pointer bg-white border border-black/5 text-black size-8 flex items-center justify-center rounded-full shadow-lg hover:shadow-xl transition-all -mr-4 group" for="panel-toggle">
-<span class="material-symbols-outlined toggle-icon text-[18px] transition-transform duration-300 group-hover:scale-110">
-                    chevron_right
-                </span>
-</label>
-</div>
-<aside class="side-panel w-[400px] glass-panel-light fixed right-0 top-0 bottom-0 z-[60] flex flex-col transition-transform duration-300">
-<div class="p-4 pt-20 border-b border-black/5 flex items-center justify-between">
-<div class="flex items-center gap-3">
-<div class="size-10 rounded-full bg-black/5 p-[1px]">
-<div class="w-full h-full rounded-full bg-cover bg-center border border-white" data-alt="Author profile" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDxCA2iQUDyrgMmyMiR1jW42SjGSwBCY24V2RGQKYoaevn9gOFkPrvnuCUiIs-6v-u2xxmYKwKbcemwJjxB0ZzSpyAXv61jFtxip0AxyNnH1IdAAUX_P-DYeFO20VX8Z_8kJNvY7DfrDIRb9_o2yfPjuJ6QEFkK0f4IWAupCNYUsdOUIL2ILu1kwhhu1IejocIDcFgYZrixkS7c3IWdd8Q8ORO6XsDANqzb2ckBmDkzAo6pRT4U3sh3oSJdnJW2EjUtiVX26lH-ptU')"></div>
-</div>
-<div>
-<div class="flex items-center gap-1">
-<span class="font-bold text-sm text-black">alex_academic</span>
-<span class="material-symbols-outlined text-primary-blue text-[16px] fill-current">verified</span>
-</div>
-<p class="text-[10px] text-black/50 font-medium uppercase tracking-tight">Verified Uploader</p>
-</div>
-</div>
-<button class="bg-black text-white px-4 py-1.5 rounded-lg font-bold text-sm hover:bg-zinc-800 transition-colors">Follow</button>
-</div>
-<div class="p-6 flex flex-col gap-4">
-<div class="accent-line rounded-full"></div>
-<h1 class="text-xl font-bold leading-tight text-black">Macroeconomics: Midterm Comprehensive Summary (ECON 101)</h1>
-<div class="flex flex-col gap-2">
-<div class="flex items-center gap-2 text-xs font-medium text-black/60">
-<span class="material-symbols-outlined text-[18px]">school</span>
-<a class="hover:text-black underline decoration-black/10" href="#">UC Berkeley</a>
-</div>
-<div class="flex items-center gap-2 text-xs font-medium text-black/60">
-<span class="material-symbols-outlined text-[18px]">book</span>
-<a class="hover:text-black underline decoration-black/10" href="#">ECON 101 • Spring 2023</a>
-</div>
-</div>
-<div class="flex items-center gap-6 py-6 border-y border-black/5 mt-2">
-<div class="flex flex-col items-center">
-<span class="font-bold text-lg text-black">1,248</span>
-<span class="text-[9px] uppercase tracking-wider text-black/40 font-bold">Likes</span>
-</div>
-<div class="flex flex-col items-center border-x border-black/5 px-8">
-<span class="font-bold text-lg text-black">843</span>
-<span class="text-[9px] uppercase tracking-wider text-black/40 font-bold">Saves</span>
-</div>
-<div class="flex flex-col items-center">
-<span class="font-bold text-lg text-black">5.6k</span>
-<span class="text-[9px] uppercase tracking-wider text-black/40 font-bold">Views</span>
-</div>
-</div>
-</div>
-<div class="flex-1 overflow-y-auto px-6 py-4 custom-scrollbar flex flex-col gap-6">
-<div class="flex gap-3">
-<div class="size-8 rounded-full bg-black/5 bg-cover bg-center shrink-0" data-alt="Student avatar 1" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDkRc6QC7aUMtZelzuq9Huuzjoeqi2IViQQb8gC9wxPIOJP5beK4RdaTRAcXN-zhEgzWB9SumVI-GdxLl-4OxwhK_8RLYj2bcsaW2FJe2IByE46UTJvBdkDK22J24gwdye2u0E11itwU8PNmWqtWxvILQMfGQn_eJHwaqeQ-IC0tqUcZ4neYWlKmVDtWNZwGAw7PhktQaODVh-LcD_Wq84PO_0-ickMLAtCElqRKEqsgU6JD3-Q1AKPHIbcMMeQO4wPWfiekAUZ4oE')"></div>
-<div class="flex flex-col gap-1">
-<div class="text-[13px] leading-relaxed">
-<span class="font-bold text-black">sarah_study</span>
-<span class="text-black/70 ml-2">This literally saved my life for the midterm! The section on IS-LM curves is so clear.</span>
-</div>
-<div class="flex items-center gap-4 text-[10px] text-black/40 mt-1 font-semibold uppercase tracking-tight">
-<span>2d</span>
-<span class="cursor-pointer hover:text-black">12 likes</span>
-<span class="cursor-pointer hover:text-black">Reply</span>
-</div>
-</div>
-</div>
-<div class="flex gap-3">
-<div class="size-8 rounded-full bg-black/5 bg-cover bg-center shrink-0" data-alt="Student avatar 2" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDCOKh3xbok-rq-mrYEZJqf09P-M1JDW26d__DRRR1o71f1ubbilHvgU1HIX_O5Pgoe0OOwsKlKoG2cJof0nnrbr4kwunz0cWC9UGSNa-gV-V728QI7At0Mtuk-DQ7sveV47Q60hG74wrvGJqODcxspuRvf_iukTBBUb_x3PfZMHa15lWfZH_F0fggiwrggUdr_UejntIC8-MXQZbhpMUh7pOdG2OQFgCIURxc5MdI38zASezHab1dvN9Tnc1PP7a7Kc8Z-tS5NXOI')"></div>
-<div class="flex flex-col gap-1">
-<div class="text-[13px] leading-relaxed">
-<span class="font-bold text-black">jack_econ</span>
-<span class="text-black/70 ml-2">Does this follow the 11th edition of the textbook or the 10th?</span>
-</div>
-<div class="flex items-center gap-4 text-[10px] text-black/40 mt-1 font-semibold uppercase tracking-tight">
-<span>1d</span>
-<span class="cursor-pointer hover:text-black">Reply</span>
-</div>
-<div class="flex gap-3 mt-4">
-<div class="size-6 rounded-full bg-black/5 shrink-0 overflow-hidden">
-<div class="w-full h-full rounded-full bg-cover bg-center border border-white" data-alt="Author profile reply" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBVK0JlfKurqo27BQVjfMTsGQ3sw4mvuoM39H4Fbsa_MDuhlhpf4sI6p2jILeoHcJimBNkwDlp1bS2UUnlkPARWMuBni4_3VVhSfbTnPwOjyCrkZ2SYat5x8ciFC2hXZouutBKBiHiaERcw1QXdE6F1lEjJG8umuDKrglgVvFcVX-lcH5NBpaBeHT83fBz73tukSra4EviGsUP9ioWWXI4RNynMkmPz_Vc7fgEGUzFg7f2CohmBHGURh5xF0gF3m8aQs9HGlhUJFpM')"></div>
-</div>
-<div class="text-[13px] leading-relaxed">
-<span class="font-bold text-black">alex_academic</span>
-<span class="text-black/70 ml-2">It's updated for the 11th edition!</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="p-6 border-t border-black/5 bg-white/40">
-<div class="flex items-center gap-5 mb-6">
-<button class="material-symbols-outlined text-2xl text-black fill-black" style="font-variation-settings: 'FILL' 1">favorite</button>
-<button class="material-symbols-outlined text-2xl text-black/40 hover:text-black transition-colors">chat_bubble</button>
-<button class="material-symbols-outlined text-2xl text-black/40 hover:text-black transition-colors">send</button>
-<div class="flex-1"></div>
-<button class="material-symbols-outlined text-2xl text-black/40 hover:text-black transition-colors">bookmark</button>
-</div>
-<div class="flex flex-col gap-3">
-<button class="btn-black-primary w-full py-3.5 rounded-xl flex items-center justify-center gap-2 active:scale-[0.98] text-sm tracking-tight">
-<span class="material-symbols-outlined text-[20px]">download</span>
-                        Download Document
-                    </button>
-<button class="btn-black-secondary w-full py-3 rounded-xl flex items-center justify-center gap-2 active:scale-[0.98] text-sm tracking-tight">
-<span class="material-symbols-outlined text-[20px]">add_circle</span>
-                        Save to Study List
-                    </button>
-</div>
-<div class="mt-6 relative">
-<input class="w-full bg-black/5 border border-black/5 rounded-xl py-3 pl-4 pr-14 text-sm focus:ring-1 focus:ring-black/10 text-black placeholder-black/40" placeholder="Add a comment..." type="text"/>
-<button class="absolute right-4 top-1/2 -translate-y-1/2 font-bold text-xs uppercase text-primary-blue hover:text-primary-blue/70 transition-colors">Post</button>
-</div>
-</div>
-</aside>
-</main>
-</div>
 
-</body></html>
+<body class="bg-white text-black antialiased overflow-hidden">
+    <input class="hidden" id="panel-toggle" type="checkbox" />
+    <div class="flex h-screen w-full relative overflow-hidden flex-col">
+        <header
+            class="h-16 fixed top-0 left-0 right-0 flex items-center justify-between px-6 z-[60] bg-white/80 backdrop-blur-md border-b border-black/5">
+            <div class="flex items-center gap-8">
+                <a href="Question.html" class="flex items-center gap-2">
+                    <div class="size-8">
+                        <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd"
+                                d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z"
+                                fill="url(#brand_grad)"></path>
+                            <path clip-rule="evenodd"
+                                d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z"
+                                fill="url(#brand_grad)"></path>
+                            <defs>
+                                <linearGradient gradientUnits="userSpaceOnUse" id="brand_grad" x1="0" x2="48" y1="0"
+                                    y2="48">
+                                    <stop stop-color="#0095f6"></stop>
+                                    <stop offset="1" stop-color="#00ff88"></stop>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h2 class="text-xl font-bold tracking-tight text-black">EduGram</h2>
+                </a>
+                <div class="relative w-72 hidden lg:block">
+                    <span
+                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-black/40 text-xl">search</span>
+                    <input
+                        class="w-full bg-black/5 border-none rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-1 focus:ring-black/10 text-black placeholder-black/40"
+                        placeholder="Search resources..." type="text" />
+                </div>
+            </div>
+            <div class="flex items-center gap-6">
+                <nav class="hidden md:flex gap-6 text-sm font-semibold text-black/60">
+                    <a class="hover:text-black transition-colors" href="#">Explore</a>
+                    <a class="hover:text-black transition-colors" href="#">Study Lists</a>
+                    <a class="hover:text-black transition-colors" href="#">Communities</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <button
+                        class="material-symbols-outlined text-2xl text-black/60 hover:text-black">notifications</button>
+                    <div class="size-8 rounded-full bg-black/5 p-[1px]">
+                        <div class="w-full h-full rounded-full bg-cover bg-center border border-white"
+                            data-alt="User profile avatar"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbg3G97LzTdLsBz0PBSxD2IIZCOuXs4sxiDxjYG-KBjKklTE7pmYCw2RZMN3COeg8fmSGGuhkCa-IgTOuifkjCKXZLN_FZJueqN7g_rRQWTOjiaeWgfclQnJmfmXmFB8N-LJ9ichr3pvvqXX17D-cM8gz843YJLj8jmGxZAP_hXVRnjCeE2UyKX0Z9zGwwA5tVR9Lji67sWYspBvKxi2kVVGhig3uIv9BBcNPG0FxokwpdoPazgdurjckfCdVJ1LSWxoF4rUMElAE')">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="viewer-content flex-1 flex relative">
+            <div class="absolute inset-0 z-0 bg-[#F4F4F5]">
+                <div
+                    class="h-full w-full overflow-y-auto custom-scrollbar flex flex-col items-center py-20 px-4 space-y-8">
+                    <img alt="Document Page 1" class="w-full max-w-4xl shadow-xl rounded-sm border border-black/5"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuARqK91zLxBI52SWK2f2UA4sW3SIMX5B488mOmIzPw2jeUCYcf4gaQrwl74CqrZPwnF06pmRvC2D2ER4Uyli00XVDiATgjt8T9yLpcIjsopdEAlFUePnTfrEM56aMrNhzUo6CTKBlVbeKQGNlGCTbLl2NIe_MaYFie_t_B5yMtOAZyPtGYKcMdEqlqv7_6kVUFR_2nA0CtiXF_FPfFapu1djZb6MFpojoXvEvTiJpDVFUVhjKmTwDVNUyNj0L1SK-zoWTvPMEV6bns" />
+                    <img alt="Document Page 2" class="w-full max-w-4xl shadow-xl rounded-sm border border-black/5"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL2Sz-6fjysvwGYflfIxeZj82NgM37mzd4YriH_JPnhcJKIRamyzq8-FF-27_tX47hurvT_0aFOArMhHxSLntrGwFPE-eV_zrunhmER8dfHKAVEEpvELmUciNE86cdCZUaDe59C_sZ2e515vrGek4Ageqr0idZqchOJhYsPihmU8IIfLfvpKtjRJvARASN0725VM4Sy2A3bUCabTPb6Rbbr5wxuFbvw2O3KP6B2ZHfH_bxu7g1XT7Qh10UTsv18ddGTOBTmPk3INc" />
+                    <div class="relative w-full max-w-4xl">
+                        <img alt="Blurred Preview" class="w-full opacity-30 blur-lg rounded-sm"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYog_CzHt7XAJrRBxJ4YWE7KliAqiKLXQ4Tj2HTwljEtcG3CkwBmw3xoGjmkGAURA9MzCvp2eEgTqNobRh-mZIuzzg8St-YZC7y6S-YW949TQ5OKQq6Rf5I-s4M9d-m-t4byXO3HxEAH3f8rXf2Y5VNjDJFQMw_WHHCohubSq9kG70KVew9l9gZ4vfhScGy0U3wwXMZIIeUDne0C5w6nwzWk_L5fam5bXX5FabOJTub4xrrLtB4tfIy_g53FfPCMNwctePYA-wo6U" />
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
+                            <h3 class="text-3xl font-bold mb-4 text-black">Unlock 12 more pages</h3>
+                            <button
+                                class="btn-black-primary px-10 py-4 rounded-xl text-lg shadow-xl hover:scale-[1.02] active:scale-95">Join
+                                to view full document</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="toggle-handle-wrapper fixed right-[400px] top-1/2 -translate-y-1/2 z-[70] transition-all duration-300">
+                <label
+                    class="cursor-pointer bg-white border border-black/5 text-black size-8 flex items-center justify-center rounded-full shadow-lg hover:shadow-xl transition-all -mr-4 group"
+                    for="panel-toggle">
+                    <span
+                        class="material-symbols-outlined toggle-icon text-[18px] transition-transform duration-300 group-hover:scale-110">
+                        chevron_right
+                    </span>
+                </label>
+            </div>
+            <aside
+                class="side-panel w-[400px] glass-panel-light fixed right-0 top-0 bottom-0 z-[60] flex flex-col transition-transform duration-300">
+                <div class="p-4 pt-20 border-b border-black/5 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="size-10 rounded-full bg-black/5 p-[1px]">
+                            <div class="w-full h-full rounded-full bg-cover bg-center border border-white"
+                                data-alt="Author profile"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDxCA2iQUDyrgMmyMiR1jW42SjGSwBCY24V2RGQKYoaevn9gOFkPrvnuCUiIs-6v-u2xxmYKwKbcemwJjxB0ZzSpyAXv61jFtxip0AxyNnH1IdAAUX_P-DYeFO20VX8Z_8kJNvY7DfrDIRb9_o2yfPjuJ6QEFkK0f4IWAupCNYUsdOUIL2ILu1kwhhu1IejocIDcFgYZrixkS7c3IWdd8Q8ORO6XsDANqzb2ckBmDkzAo6pRT4U3sh3oSJdnJW2EjUtiVX26lH-ptU')">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-1">
+                                <span class="font-bold text-sm text-black">alex_academic</span>
+                                <span
+                                    class="material-symbols-outlined text-primary-blue text-[16px] fill-current">verified</span>
+                            </div>
+                            <p class="text-[10px] text-black/50 font-medium uppercase tracking-tight">Verified Uploader
+                            </p>
+                        </div>
+                    </div>
+                    <button
+                        class="bg-black text-white px-4 py-1.5 rounded-lg font-bold text-sm hover:bg-zinc-800 transition-colors">Follow</button>
+                </div>
+                <div class="p-6 flex flex-col gap-4">
+                    <div class="accent-line rounded-full"></div>
+                    <h1 class="text-xl font-bold leading-tight text-black">Macroeconomics: Midterm Comprehensive Summary
+                        (ECON 101)</h1>
+                    <div class="flex flex-col gap-2">
+                        <div class="flex items-center gap-2 text-xs font-medium text-black/60">
+                            <span class="material-symbols-outlined text-[18px]">school</span>
+                            <a class="hover:text-black underline decoration-black/10" href="#">UC Berkeley</a>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs font-medium text-black/60">
+                            <span class="material-symbols-outlined text-[18px]">book</span>
+                            <a class="hover:text-black underline decoration-black/10" href="#">ECON 101 • Spring
+                                2023</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-6 py-6 border-y border-black/5 mt-2">
+                        <div class="flex flex-col items-center">
+                            <span class="font-bold text-lg text-black">1,248</span>
+                            <span class="text-[9px] uppercase tracking-wider text-black/40 font-bold">Likes</span>
+                        </div>
+                        <div class="flex flex-col items-center border-x border-black/5 px-8">
+                            <span class="font-bold text-lg text-black">843</span>
+                            <span class="text-[9px] uppercase tracking-wider text-black/40 font-bold">Saves</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span class="font-bold text-lg text-black">5.6k</span>
+                            <span class="text-[9px] uppercase tracking-wider text-black/40 font-bold">Views</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1 overflow-y-auto px-6 py-4 custom-scrollbar flex flex-col gap-6">
+                    <div class="flex gap-3">
+                        <div class="size-8 rounded-full bg-black/5 bg-cover bg-center shrink-0"
+                            data-alt="Student avatar 1"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDkRc6QC7aUMtZelzuq9Huuzjoeqi2IViQQb8gC9wxPIOJP5beK4RdaTRAcXN-zhEgzWB9SumVI-GdxLl-4OxwhK_8RLYj2bcsaW2FJe2IByE46UTJvBdkDK22J24gwdye2u0E11itwU8PNmWqtWxvILQMfGQn_eJHwaqeQ-IC0tqUcZ4neYWlKmVDtWNZwGAw7PhktQaODVh-LcD_Wq84PO_0-ickMLAtCElqRKEqsgU6JD3-Q1AKPHIbcMMeQO4wPWfiekAUZ4oE')">
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <div class="text-[13px] leading-relaxed">
+                                <span class="font-bold text-black">sarah_study</span>
+                                <span class="text-black/70 ml-2">This literally saved my life for the midterm! The
+                                    section on IS-LM curves is so clear.</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-4 text-[10px] text-black/40 mt-1 font-semibold uppercase tracking-tight">
+                                <span>2d</span>
+                                <span class="cursor-pointer hover:text-black">12 likes</span>
+                                <span class="cursor-pointer hover:text-black">Reply</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex gap-3">
+                        <div class="size-8 rounded-full bg-black/5 bg-cover bg-center shrink-0"
+                            data-alt="Student avatar 2"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDCOKh3xbok-rq-mrYEZJqf09P-M1JDW26d__DRRR1o71f1ubbilHvgU1HIX_O5Pgoe0OOwsKlKoG2cJof0nnrbr4kwunz0cWC9UGSNa-gV-V728QI7At0Mtuk-DQ7sveV47Q60hG74wrvGJqODcxspuRvf_iukTBBUb_x3PfZMHa15lWfZH_F0fggiwrggUdr_UejntIC8-MXQZbhpMUh7pOdG2OQFgCIURxc5MdI38zASezHab1dvN9Tnc1PP7a7Kc8Z-tS5NXOI')">
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <div class="text-[13px] leading-relaxed">
+                                <span class="font-bold text-black">jack_econ</span>
+                                <span class="text-black/70 ml-2">Does this follow the 11th edition of the textbook or
+                                    the 10th?</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-4 text-[10px] text-black/40 mt-1 font-semibold uppercase tracking-tight">
+                                <span>1d</span>
+                                <span class="cursor-pointer hover:text-black">Reply</span>
+                            </div>
+                            <div class="flex gap-3 mt-4">
+                                <div class="size-6 rounded-full bg-black/5 shrink-0 overflow-hidden">
+                                    <div class="w-full h-full rounded-full bg-cover bg-center border border-white"
+                                        data-alt="Author profile reply"
+                                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBVK0JlfKurqo27BQVjfMTsGQ3sw4mvuoM39H4Fbsa_MDuhlhpf4sI6p2jILeoHcJimBNkwDlp1bS2UUnlkPARWMuBni4_3VVhSfbTnPwOjyCrkZ2SYat5x8ciFC2hXZouutBKBiHiaERcw1QXdE6F1lEjJG8umuDKrglgVvFcVX-lcH5NBpaBeHT83fBz73tukSra4EviGsUP9ioWWXI4RNynMkmPz_Vc7fgEGUzFg7f2CohmBHGURh5xF0gF3m8aQs9HGlhUJFpM')">
+                                    </div>
+                                </div>
+                                <div class="text-[13px] leading-relaxed">
+                                    <span class="font-bold text-black">alex_academic</span>
+                                    <span class="text-black/70 ml-2">It's updated for the 11th edition!</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 border-t border-black/5 bg-white/40">
+                    <div class="flex items-center gap-5 mb-6">
+                        <button class="material-symbols-outlined text-2xl text-black fill-black"
+                            style="font-variation-settings: 'FILL' 1">favorite</button>
+                        <button
+                            class="material-symbols-outlined text-2xl text-black/40 hover:text-black transition-colors">chat_bubble</button>
+                        <button
+                            class="material-symbols-outlined text-2xl text-black/40 hover:text-black transition-colors">send</button>
+                        <div class="flex-1"></div>
+                        <button
+                            class="material-symbols-outlined text-2xl text-black/40 hover:text-black transition-colors">bookmark</button>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <button
+                            class="btn-black-primary w-full py-3.5 rounded-xl flex items-center justify-center gap-2 active:scale-[0.98] text-sm tracking-tight">
+                            <span class="material-symbols-outlined text-[20px]">download</span>
+                            Download Document
+                        </button>
+                        <button
+                            class="btn-black-secondary w-full py-3 rounded-xl flex items-center justify-center gap-2 active:scale-[0.98] text-sm tracking-tight">
+                            <span class="material-symbols-outlined text-[20px]">add_circle</span>
+                            Save to Study List
+                        </button>
+                    </div>
+                    <div class="mt-6 relative">
+                        <input
+                            class="w-full bg-black/5 border border-black/5 rounded-xl py-3 pl-4 pr-14 text-sm focus:ring-1 focus:ring-black/10 text-black placeholder-black/40"
+                            placeholder="Add a comment..." type="text" />
+                        <button
+                            class="absolute right-4 top-1/2 -translate-y-1/2 font-bold text-xs uppercase text-primary-blue hover:text-primary-blue/70 transition-colors">Post</button>
+                    </div>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+</body>
+
+</html>

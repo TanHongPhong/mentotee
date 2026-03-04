@@ -22,20 +22,28 @@
                 extend: {
                     colors: {
                         "primary": "#13ecb6",
+                        "brand-blue": "#0066FF",
+                        "brand-lime": "#32FF7E",
                         "background-light": "#f6f8f8",
                         "background-dark": "#10221d",
                     },
                     fontFamily: {
-                        "display": ["Lexend"]
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "lexend": ["Lexend", "sans-serif"]
                     },
                     borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                    backgroundImage: {
+                        'primary-gradient': 'linear-gradient(135deg, #0066FF 0%, #32FF7E 100%)',
+                    }
                 },
             },
         }
     </script>
-    <style>
-        body {
-            font-family: 'Lexend', sans-serif;
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                font-family: 'Plus Jakarta Sans', sans-serif;
+            }
         }
 
         .custom-scrollbar::-webkit-scrollbar {
@@ -50,33 +58,92 @@
             background: #13ecb633;
             border-radius: 10px;
         }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #0066FF 0%, #32FF7E 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-active-line {
+            position: relative;
+        }
+
+        .nav-active-line::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 1rem;
+            right: 1rem;
+            height: 2px;
+            background: linear-gradient(135deg, #0066FF 0%, #32FF7E 100%);
+            border-radius: 99px;
+        }
     </style>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
-    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
-        <div class="layout-container flex h-full grow flex-col">
-            <!-- Header -->
-            <header
-                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50 px-6 md:px-20 py-3">
-                <a href="Question.html" class="flex items-center gap-3">
-                    <div class="size-8 text-primary">
-                        <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                            <path clip-rule="evenodd"
-                                d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z"
-                                fill="currentColor" fill-rule="evenodd"></path>
-                            <path clip-rule="evenodd"
-                                d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z"
-                                fill="currentColor" fill-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                    <h2 class="text-xl font-bold leading-tight tracking-tight">EduGram</h2>
+<body class="bg-white font-display text-slate-900">
+    <main class="max-w-[1440px] mx-auto flex gap-12 px-6 lg:px-10 py-8">
+        <aside class="hidden lg:flex flex-col w-60 shrink-0 h-[calc(100vh-32px)] sticky top-4">
+            <a href="Question.html" class="flex items-center gap-2 mb-4 px-4">
+                <div class="size-8">
+                    <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logo-gradient" x1="0%" x2="100%" y1="0%" y2="100%">
+                                <stop offset="0%" stop-color="#0066FF"></stop>
+                                <stop offset="100%" stop-color="#32FF7E"></stop>
+                            </linearGradient>
+                        </defs>
+                        <path clip-rule="evenodd"
+                            d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z"
+                            fill="url(#logo-gradient)" fill-rule="evenodd"></path>
+                        <path clip-rule="evenodd"
+                            d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z"
+                            fill="url(#logo-gradient)" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <h2 class="text-xl font-bold tracking-tight text-gradient">EduGram</h2>
+            </a>
+            <nav class="flex flex-col gap-1">
+                <a class="flex items-center gap-4 px-4 py-3 rounded-xl text-slate-500 hover:bg-gray-50 transition-all font-bold"
+                    href="index.html">
+                    <span class="material-symbols-outlined">home</span>
+                    <span class="text-[15px]">Home Feed</span>
                 </a>
+                <a class="flex items-center gap-4 px-4 py-3 rounded-xl text-slate-500 hover:bg-gray-50 transition-all"
+                    href="explore.html">
+                    <span class="material-symbols-outlined">explore</span>
+                    <span class="text-[15px]">Explore</span>
+                </a>
+                <a class="flex items-center gap-4 px-4 py-3 rounded-xl text-slate-500 hover:bg-gray-50 transition-all"
+                    href="Studygroup.html">
+                    <span class="material-symbols-outlined">groups</span>
+                    <span class="text-[15px]">Study Groups</span>
+                </a>
+                <a class="flex items-center gap-4 px-4 py-3 rounded-xl text-slate-500 hover:bg-gray-50 transition-all"
+                    href="profile.html">
+                    <span class="material-symbols-outlined">account_circle</span>
+                    <span class="text-[15px]">Profile</span>
+                </a>
+            </nav>
+            <div class="mt-8">
+                <button
+                    class="w-full flex items-center justify-center gap-2 rounded-xl h-12 bg-black text-white font-bold text-sm hover:opacity-90 transition-all">
+                    <span class="material-symbols-outlined text-lg">add</span>
+                    Upload
+                </button>
+            </div>
+        </aside>
+
+        <section class="flex-1 min-w-0">
+            <!-- Header for Mobile / Skip Button for Desktop -->
+            <div class="flex items-center justify-end mb-8">
                 <button
                     class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary/10 text-primary hover:bg-primary/20 transition-all text-sm font-bold">
                     <span>Bỏ qua</span>
                 </button>
-            </header>
+            </div>
             <main class="flex flex-1 justify-center py-8 px-4 md:px-10">
                 <div class="max-w-[720px] w-full flex flex-col gap-10">
                     <!-- Title Section -->
@@ -319,8 +386,8 @@
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHfQ91fFT0DQYQ3c5qrlcElSq5c-neyvEAP37hKtUatvuLXu9TScURRiBaT0I-KviVLfAtVV3gxRXNByqCVd9KEuchpArqR6UZfY1Pfsay2nAT0wUVTB1PzXmbZLXg7uo92XPEwgZcKF4IT1shtjgtirprkbGoUZ9BNBdTWZngSvOuGIvwsb7mV0kYvZMSdb90cV-j8aAf1-q6KJmrwoHcxkov2dDWcxo-C5TlIxNls_rp3bODu7HepVK3XZlIkCc1EPpheJ_lsDrC" />
                 </div>
             </div>
-        </div>
-    </div>
+            </div>
+            </div>
 </body>
 
 </html>
