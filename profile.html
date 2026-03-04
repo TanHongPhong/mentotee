@@ -1,0 +1,552 @@
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>EduGram Profile - Tight Grid Layout</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#000000",
+                        "accent-blue": "#0066FF",
+                        "accent-green": "#00FF94",
+                        "background-light": "#ffffff",
+                        "background-dark": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: { "DEFAULT": "0.375rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .bg-brand-gradient {
+                background: linear-gradient(110deg, #0066FF 0%, #00FF94 100%);
+            }
+            .text-brand-gradient {
+                background: linear-gradient(110deg, #0066FF 0%, #00FF94 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            .glow-ring {
+                box-shadow: 0 0-12px rgba(0, 102, 255, 0.2);
+            }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+        }
+        .doc-card:hover .overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body class="bg-white font-display text-black">
+    <div class="flex min-h-screen">
+        <main class="max-w-[1440px] mx-auto flex gap-12 px-6 lg:px-10 py-8 w-full">
+            <aside class="hidden lg:flex flex-col w-60 shrink-0 h-[calc(100vh-32px)] sticky top-4">
+                <a href="Question.html" class="flex items-center gap-2 mb-4 px-4">
+                    <div class="size-8">
+                        <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="logo-gradient" x1="0%" x2="100%" y1="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#0066FF"></stop>
+                                    <stop offset="100%" stop-color="#32FF7E"></stop>
+                                </linearGradient>
+                            </defs>
+                            <path clip-rule="evenodd"
+                                d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z"
+                                fill="url(#logo-gradient)" fill-rule="evenodd"></path>
+                            <path clip-rule="evenodd"
+                                d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z"
+                                fill="url(#logo-gradient)" fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-xl font-bold tracking-tight"
+                        style="background: linear-gradient(135deg, #0066FF 0%, #32FF7E 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                        EduGram</h2>
+                </a>
+                <nav class="flex flex-col gap-1">
+                    <a class="flex items-center gap-4 px-4 py-3 rounded-xl text-zinc-500 hover:bg-gray-50 transition-all"
+                        href="home_feed.html">
+                        <span class="material-symbols-outlined">home</span>
+                        <span class="text-[15px]">Home Feed</span>
+                    </a>
+                    <a class="flex items-center gap-4 px-4 py-3 rounded-xl text-zinc-500 hover:bg-gray-50 transition-all"
+                        href="explore.html">
+                        <span class="material-symbols-outlined">explore</span>
+                        <span class="text-[15px]">Explore</span>
+                    </a>
+                    <a class="flex items-center gap-4 px-4 py-3 rounded-xl text-zinc-500 hover:bg-gray-50 transition-all"
+                        href="Studygroup.html">
+                        <span class="material-symbols-outlined">groups</span>
+                        <span class="text-[15px]">Study Groups</span>
+                    </a>
+                    <a class="flex items-center gap-4 px-4 py-3 rounded-xl bg-zinc-100 text-black font-bold transition-all"
+                        href="profile.html">
+                        <span class="material-symbols-outlined filled-icon">account_circle</span>
+                        <span class="text-[15px]">Profile</span>
+                    </a>
+                </nav>
+                <div class="mt-8">
+                    <button
+                        class="w-full flex items-center justify-center gap-2 rounded-xl h-12 bg-black text-white font-bold text-sm hover:opacity-90 transition-all">
+                        <span class="material-symbols-outlined text-lg">add</span>
+                        Upload
+                    </button>
+                </div>
+            </aside>
+            <div class="flex-1 flex flex-col items-center min-h-screen">
+                <div class="w-full max-w-[935px] flex flex-col pt-12">
+                    <header class="flex px-8 items-start gap-16 mb-12">
+                        <div class="relative">
+                            <div
+                                class="size-32 rounded-full p-[3px] bg-brand-gradient glow-ring flex items-center justify-center">
+                                <div
+                                    class="w-full h-full rounded-full bg-white dark:bg-background-dark p-1 flex items-center justify-center">
+                                    <div class="w-full h-full rounded-full overflow-hidden"
+                                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDQepigPeEpv5O1uW_jPjLfhHemXBUIEcIjDVhMKSxyqdSjt1b2XfHtUdbIIWzMhaetkGDQ_Gv3dR43LS-NQyq9B6T5AjnsZ5pqsMvUDGEhD9nUMfcbEHkG9H3CQgAyuF9T06lEB2LiFV5MsDEAJmcF2fVwOiaJcVs-O5_6TyLN7q5tsjMT79vYNnp3HHHmMfFzNzDR_m6km2pcU1wBBK9GD_jBCuyKoK2Pk53TQ0Zaz0-Ks8gtgJygFWymG_FVBMmKiruEWsimdgU'); background-size: cover; background-position: center;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-1 flex flex-col gap-5 pt-1">
+                            <div class="flex items-center gap-6">
+                                <h2 class="text-xl font-light tracking-tight">poh._.102</h2>
+                                <div class="flex gap-2">
+                                    <button
+                                        class="border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-transparent text-black dark:text-white px-5 py-1.5 rounded-lg text-xs font-bold hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-all">Edit
+                                        Profile</button>
+                                    <button
+                                        class="material-symbols-outlined cursor-pointer text-zinc-400 hover:text-black dark:hover:text-white transition-colors text-[20px]">settings</button>
+                                </div>
+                            </div>
+                            <div class="flex gap-8">
+                                <div class="flex gap-1 items-center">
+                                    <span class="font-bold text-sm">42</span>
+                                    <span class="text-zinc-500 text-[12px]">documents</span>
+                                </div>
+                                <div class="flex gap-1 items-center">
+                                    <span class="font-bold text-sm">1.2k</span>
+                                    <span class="text-zinc-500 text-[12px]">followers</span>
+                                </div>
+                                <div class="flex gap-1 items-center">
+                                    <span class="font-bold text-sm">850</span>
+                                    <span class="text-zinc-500 text-[12px]">following</span>
+                                </div>
+                                <div class="flex gap-1 items-center">
+                                    <span class="font-bold text-sm">25</span>
+                                    <span class="text-zinc-500 text-[12px]">Mentees</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-0.5">
+                                <div class="flex items-center gap-1 font-bold text-xs">
+                                    <span>University of Economics Ho Chi Minh City</span>
+                                    <span
+                                        class="material-symbols-outlined text-zinc-900 dark:text-zinc-100 text-[14px] filled-icon">verified</span>
+                                </div>
+                                <p class="text-xs leading-relaxed text-zinc-600 dark:text-zinc-400">
+                                    Logistics Technology - K50 | UEH<br />
+                                    Trùm UEH, đàn em Tày chó điên! 📚✨
+                                    <a class="text-zinc-400 hover:text-black dark:hover:text-white font-medium block mt-1"
+                                        href="#">ueh.edu.vn/poh-notes</a>
+                                </p>
+                            </div>
+                        </div>
+                    </header>
+                    <!-- TABS -->
+                    <div class="border-t border-zinc-100 flex justify-center gap-12">
+                        <button onclick="switchTab('documents')" data-tab="documents"
+                            class="tab-btn flex items-center gap-1.5 py-4 relative text-black font-extrabold">
+                            <div class="h-[3px] w-full bg-brand-gradient absolute top-0 rounded-b-full tab-line"></div>
+                            <span class="material-symbols-outlined text-[16px] filled-icon">grid_on</span>
+                            <span class="text-[11px] tracking-[0.1em] uppercase">DOCUMENTS</span>
+                        </button>
+                        <button onclick="switchTab('roadmap')" data-tab="roadmap"
+                            class="tab-btn flex items-center gap-1.5 py-4 relative text-zinc-400 hover:text-black transition-colors">
+                            <div class="h-[3px] w-full bg-brand-gradient absolute top-0 rounded-b-full tab-line hidden">
+                            </div>
+                            <span class="material-symbols-outlined text-[16px]">map</span>
+                            <span class="text-[11px] font-extrabold tracking-[0.1em] uppercase">ROADMAP</span>
+                        </button>
+                        <button onclick="switchTab('tools')" data-tab="tools"
+                            class="tab-btn flex items-center gap-1.5 py-4 relative text-zinc-400 hover:text-black transition-colors">
+                            <div class="h-[3px] w-full bg-brand-gradient absolute top-0 rounded-b-full tab-line hidden">
+                            </div>
+                            <span class="material-symbols-outlined text-[16px]">build</span>
+                            <span class="text-[11px] font-extrabold tracking-[0.1em] uppercase">TOOLS</span>
+                        </button>
+                        <button onclick="switchTab('saved')" data-tab="saved"
+                            class="tab-btn flex items-center gap-1.5 py-4 relative text-zinc-400 hover:text-black transition-colors">
+                            <div class="h-[3px] w-full bg-brand-gradient absolute top-0 rounded-b-full tab-line hidden">
+                            </div>
+                            <span class="material-symbols-outlined text-[16px]">bookmark</span>
+                            <span class="text-[11px] font-extrabold tracking-[0.1em] uppercase">SAVED</span>
+                        </button>
+                    </div>
+
+                    <!-- TAB: DOCUMENTS -->
+                    <div id="tab-documents" class="tab-content grid grid-cols-3 gap-4 pb-20">
+                        <div class="flex flex-col gap-2">
+                            <div
+                                class="doc-card group relative aspect-square bg-zinc-100 overflow-hidden rounded-xl cursor-pointer">
+                                <img alt="Document" class="w-full h-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeKklCi8DVqc5LSLvhM-Kzs-cYDc4f37Ccdncj-y1EmBsyr-IBImVo7_2CV1iDJXmgJA_jTklRhTSKOaUOGcMoRqr2Quk1_I0MpMdrPcXZ1eQoLFNsvi4QLzMUG7cyLZpYnywBaRPqqcKnxkNl4InJztjcrwKSvB_Plc6Hwyx6rrRj-bFaZab4ku9f_vvX2lIKXZ99J5H6VSCqGRjXhSVuJlhhSyLTL6HLJws6pyUJAtE6wLU-3IgKPF6atd5xFbv4EmoWTIk3tDw" />
+                                <div
+                                    class="absolute inset-0 bg-black/50 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200 overlay">
+                                    <div class="flex items-center gap-1.5 text-white font-bold"><span
+                                            class="material-symbols-outlined filled-icon text-[18px]">favorite</span><span
+                                            class="text-[12px]">245</span></div>
+                                    <div class="flex items-center gap-1.5 text-white font-bold"><span
+                                            class="material-symbols-outlined filled-icon text-[18px]">download</span><span
+                                            class="text-[12px]">1.2k</span></div>
+                                </div>
+                            </div>
+                            <span class="text-[12px] font-bold text-center">AI Ethics Introduction</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <div
+                                class="doc-card group relative aspect-square bg-zinc-100 overflow-hidden rounded-xl cursor-pointer">
+                                <img alt="Document" class="w-full h-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwWUQf3yC4w7goArrdsgbR5z_238TNpysFN2O6rEw8_EmP3RnAv4yS0zDeJM0kkiLgLeYPLtTltRq9nJaFmwe7pqO074jUVkQqggYv_vSjyEWeatuLKXPPwVjlttPORVKsM6HZ3RnC4DgHP0dLOS_dgFSfeYuSYQPCmj52N0S9H9VOhsPWUVo2zocPwyCYIZOHgsmUf_6LT8NLqjng4ctlCo5FHWyF6IslL_sDSJJQXuyQfCh7-4D-MmQQ0cuUPRP8hTQoqVz1Aqk" />
+                                <div
+                                    class="absolute inset-0 bg-black/50 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200 overlay">
+                                    <div class="flex items-center gap-1.5 text-white font-bold"><span
+                                            class="material-symbols-outlined filled-icon text-[18px]">favorite</span><span
+                                            class="text-[12px]">182</span></div>
+                                    <div class="flex items-center gap-1.5 text-white font-bold"><span
+                                            class="material-symbols-outlined filled-icon text-[18px]">download</span><span
+                                            class="text-[12px]">890</span></div>
+                                </div>
+                            </div>
+                            <span class="text-[12px] font-bold text-center">Logistics 101 Notes</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <div
+                                class="doc-card group relative aspect-square bg-zinc-100 overflow-hidden rounded-xl cursor-pointer">
+                                <img alt="Document" class="w-full h-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNsKDd0hk8jKIOshiIGCAwD3LHR6-l6IvUc39Dl-cXfYISWCSYqOiXuodMtUz3xMvyJYW8MNvWiRGNoA0MT4_kh8HXrrSu0WwkHb3sOtquMww0wapB2zllnPtJ_rH7EbfacZpM8ARJRSIQgmuASJMxI-4diKUa2s6XACXtVkz0tvo2zz7jyTIM7Fsb8LWzEAeNVOlrdpeuoZAZiQj_PQ7e0nYnsdGjYkN2kJ88a39As-t8pkaeoxzB97Sm79PsDcWCpGZuRAfSVGM" />
+                                <div
+                                    class="absolute inset-0 bg-black/50 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200 overlay">
+                                    <div class="flex items-center gap-1.5 text-white font-bold"><span
+                                            class="material-symbols-outlined filled-icon text-[18px]">favorite</span><span
+                                            class="text-[12px]">95</span></div>
+                                    <div class="flex items-center gap-1.5 text-white font-bold"><span
+                                            class="material-symbols-outlined filled-icon text-[18px]">download</span><span
+                                            class="text-[12px]">432</span></div>
+                                </div>
+                            </div>
+                            <span class="text-[12px] font-bold text-center">Machine Learning Frameworks</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <div
+                                class="doc-card group relative aspect-square bg-zinc-100 overflow-hidden rounded-xl cursor-pointer">
+                                <img alt="Document" class="w-full h-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRQarC0dEenFvqjbmYzy-SEfGfW5PcAGP0dM9KbpsDFWTdwfIhg1sUG26JZoVRQMFjNXBdvPy7eX1NJR4-cRIDHJe5YOWYoNGwov_hv3E3Cy0B7LkPp8b3Q1emsjM-wa0hA2i8Zh9dMEsb-gLuZJgQyFMiJDazBGDeQOdsc3rB0DPfiR_2V4CA2G8r4HlRQsRHfSUnRnGIfRyRQUixqUrV2Qc1Uf9eW28TqVIVzZkl57qJj3r36NVCt8HqqQVBj_q5-8-Z0u0itTU" />
+                                <div
+                                    class="absolute inset-0 bg-black/50 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200 overlay">
+                                    <div class="flex items-center gap-1.5 text-white font-bold"><span
+                                            class="material-symbols-outlined filled-icon text-[18px]">favorite</span><span
+                                            class="text-[12px]">312</span></div>
+                                    <div class="flex items-center gap-1.5 text-white font-bold"><span
+                                            class="material-symbols-outlined filled-icon text-[18px]">download</span><span
+                                            class="text-[12px]">1.5k</span></div>
+                                </div>
+                            </div>
+                            <span class="text-[12px] font-bold text-center">Python for Data Analysis</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <div
+                                class="doc-card group relative aspect-square bg-zinc-100 overflow-hidden rounded-xl cursor-pointer">
+                                <img alt="Document" class="w-full h-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmPPw2V4WC3IhyrQoGS5k3TEFkdhdYRao9INpPY3cwK_cc8M8RZA5NRapO4JbkhJWdet1yuBUh2y2W1LnDUgx9iVRmTwpzUM0KSEJ2dnTKwE5HzHx2MPCqinwWUWKeNOi0_wGdFAPHTOsgRtvPUQmqH4GqC_pNOBbTnAqEewQEweTxeNSedUGHwNNtWIsgy2QUdkdqc-AUzBwKhBY0uzw1zJmUyT59FoBN0r22kSu7UQXEFr3Idiz7W-68Kcj3qpa6gXcdj60LCxI" />
+                                <div
+                                    class="absolute inset-0 bg-black/50 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200 overlay">
+                                    <div class="flex items-center gap-1.5 text-white font-bold"><span
+                                            class="material-symbols-outlined filled-icon text-[18px]">favorite</span><span
+                                            class="text-[12px]">156</span></div>
+                                    <div class="flex items-center gap-1.5 text-white font-bold"><span
+                                            class="material-symbols-outlined filled-icon text-[18px]">download</span><span
+                                            class="text-[12px]">720</span></div>
+                                </div>
+                            </div>
+                            <span class="text-[12px] font-bold text-center">Supply Chain Management</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <div
+                                class="doc-card group relative aspect-square bg-zinc-100 overflow-hidden rounded-xl cursor-pointer">
+                                <img alt="Document" class="w-full h-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuACo7q4pLX7TTMNaWWd9lBhU2xSc9kKhYgKKot2GSfhJDs4eQBf7RjcKDCD0NoFJCn9olHDygjfhry5957GiGMX0rAngVy5MSP8kPOanNN8ikHhroS3UnEN2QmTtpU1tDty-Stu_nRPOYwKJW8OKhQMJ88MhlTBfgpV1da15suTLe1Gi-H489_End5dcLeVx-CXKoEeeIFRPs-pMldeukEbRVz_1aZEHrsLXKhrU2ONgpbhC6U2D-aSOeb3dHCCtCOGBpILf-fBs_s" />
+                                <div
+                                    class="absolute inset-0 bg-black/50 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200 overlay">
+                                    <div class="flex items-center gap-1.5 text-white font-bold"><span
+                                            class="material-symbols-outlined filled-icon text-[18px]">favorite</span><span
+                                            class="text-[12px]">204</span></div>
+                                    <div class="flex items-center gap-1.5 text-white font-bold"><span
+                                            class="material-symbols-outlined filled-icon text-[18px]">download</span><span
+                                            class="text-[12px]">1.1k</span></div>
+                                </div>
+                            </div>
+                            <span class="text-[12px] font-bold text-center">UI/UX Design Principles</span>
+                        </div>
+                    </div>
+
+                    <!-- TAB: ROADMAP -->
+                    <div id="tab-roadmap" class="tab-content hidden grid grid-cols-3 gap-4 pb-20">
+                        <div class="flex flex-col gap-2">
+                            <div onclick="window.location.href='AI_Engineer_Roadmap.html'"
+                                class="doc-card group relative aspect-square bg-zinc-100 overflow-hidden rounded-xl cursor-pointer">
+                                <img alt="Roadmap" class="w-full h-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeKklCi8DVqc5LSLvhM-Kzs-cYDc4f37Ccdncj-y1EmBsyr-IBImVo7_2CV1iDJXmgJA_jTklRhTSKOaUOGcMoRqr2Quk1_I0MpMdrPcXZ1eQoLFNsvi4QLzMUG7cyLZpYnywBaRPqqcKnxkNl4InJztjcrwKSvB_Plc6Hwyx6rrRj-bFaZab4ku9f_vvX2lIKXZ99J5H6VSCqGRjXhSVuJlhhSyLTL6HLJws6pyUJAtE6wLU-3IgKPF6atd5xFbv4EmoWTIk3tDw" />
+                                <div
+                                    class="absolute inset-0 bg-black/50 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200 overlay">
+                                    <div class="flex items-center gap-1.5 text-white font-bold"><span
+                                            class="material-symbols-outlined filled-icon text-[18px]">favorite</span><span
+                                            class="text-[12px]">120</span></div>
+                                    <div class="flex items-center gap-1.5 text-white font-bold"><span
+                                            class="material-symbols-outlined filled-icon text-[18px]">download</span><span
+                                            class="text-[12px]">560</span></div>
+                                </div>
+                            </div>
+                            <span class="text-[12px] font-bold text-center">AI Engineer Roadmap</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <div onclick="window.location.href='AI_Engineer_Roadmap.html'"
+                                class="doc-card group relative aspect-square bg-zinc-100 overflow-hidden rounded-xl cursor-pointer">
+                                <img alt="Roadmap" class="w-full h-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRQarC0dEenFvqjbmYzy-SEfGfW5PcAGP0dM9KbpsDFWTdwfIhg1sUG26JZoVRQMFjNXBdvPy7eX1NJR4-cRIDHJe5YOWYoNGwov_hv3E3Cy0B7LkPp8b3Q1emsjM-wa0hA2i8Zh9dMEsb-gLuZJgQyFMiJDazBGDeQOdsc3rB0DPfiR_2V4CA2G8r4HlRQsRHfSUnRnGIfRyRQUixqUrV2Qc1Uf9eW28TqVIVzZkl57qJj3r36NVCt8HqqQVBj_q5-8-Z0u0itTU" />
+                                <div
+                                    class="absolute inset-0 bg-black/50 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200 overlay">
+                                    <div class="flex items-center gap-1.5 text-white font-bold"><span
+                                            class="material-symbols-outlined filled-icon text-[18px]">favorite</span><span
+                                            class="text-[12px]">88</span></div>
+                                    <div class="flex items-center gap-1.5 text-white font-bold"><span
+                                            class="material-symbols-outlined filled-icon text-[18px]">download</span><span
+                                            class="text-[12px]">340</span></div>
+                                </div>
+                            </div>
+                            <span class="text-[12px] font-bold text-center">Data Scientist Roadmap</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <div onclick="window.location.href='AI_Engineer_Roadmap.html'"
+                                class="doc-card group relative aspect-square bg-zinc-100 overflow-hidden rounded-xl cursor-pointer">
+                                <img alt="Roadmap" class="w-full h-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuACo7q4pLX7TTMNaWWd9lBhU2xSc9kKhYgKKot2GSfhJDs4eQBf7RjcKDCD0NoFJCn9olHDygjfhry5957GiGMX0rAngVy5MSP8kPOanNN8ikHhroS3UnEN2QmTtpU1tDty-Stu_nRPOYwKJW8OKhQMJ88MhlTBfgpV1da15suTLe1Gi-H489_End5dcLeVx-CXKoEeeIFRPs-pMldeukEbRVz_1aZEHrsLXKhrU2ONgpbhC6U2D-aSOeb3dHCCtCOGBpILf-fBs_s" />
+                                <div
+                                    class="absolute inset-0 bg-black/50 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200 overlay">
+                                    <div class="flex items-center gap-1.5 text-white font-bold"><span
+                                            class="material-symbols-outlined filled-icon text-[18px]">favorite</span><span
+                                            class="text-[12px]">67</span></div>
+                                    <div class="flex items-center gap-1.5 text-white font-bold"><span
+                                            class="material-symbols-outlined filled-icon text-[18px]">download</span><span
+                                            class="text-[12px]">210</span></div>
+                                </div>
+                            </div>
+                            <span class="text-[12px] font-bold text-center">Frontend Engineer Roadmap</span>
+                        </div>
+                    </div>
+
+                    <!-- TAB: TOOLS -->
+                    <div id="tab-tools" class="tab-content hidden grid grid-cols-3 gap-4 pb-20">
+                        <div class="flex flex-col gap-2">
+                            <div
+                                class="aspect-square bg-zinc-900 flex flex-col items-center justify-center text-center p-6 rounded-xl cursor-pointer hover:bg-black transition-all">
+                                <span class="material-symbols-outlined text-white text-3xl mb-3">calculate</span>
+                                <span class="text-[10px] font-bold text-white uppercase tracking-widest">Open
+                                    Tool</span>
+                            </div>
+                            <span class="text-[12px] font-bold text-center">GPA Calculator</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <div
+                                class="aspect-square bg-zinc-50 border border-zinc-100 flex flex-col items-center justify-center text-center p-6 rounded-xl cursor-pointer hover:bg-white transition-all">
+                                <span class="material-symbols-outlined text-black text-3xl mb-3">format_quote</span>
+                                <span class="text-[10px] font-bold text-black uppercase tracking-widest">Open
+                                    Tool</span>
+                            </div>
+                            <span class="text-[12px] font-bold text-center">Citation Generator</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <div
+                                class="aspect-square bg-zinc-50 border border-zinc-100 flex flex-col items-center justify-center text-center p-6 rounded-xl cursor-pointer hover:bg-white transition-all">
+                                <span class="material-symbols-outlined text-black text-3xl mb-3">picture_as_pdf</span>
+                                <span class="text-[10px] font-bold text-black uppercase tracking-widest">Open
+                                    Tool</span>
+                            </div>
+                            <span class="text-[12px] font-bold text-center">PDF Merger</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <div
+                                class="aspect-square bg-zinc-50 border border-zinc-100 flex flex-col items-center justify-center text-center p-6 rounded-xl cursor-pointer hover:bg-white transition-all">
+                                <span class="material-symbols-outlined text-black text-3xl mb-3">edit_note</span>
+                                <span class="text-[10px] font-bold text-black uppercase tracking-widest">Open
+                                    Tool</span>
+                            </div>
+                            <span class="text-[12px] font-bold text-center">Note Summarizer</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <div
+                                class="aspect-square bg-zinc-50 border border-zinc-100 flex flex-col items-center justify-center text-center p-6 rounded-xl cursor-pointer hover:bg-white transition-all">
+                                <span class="material-symbols-outlined text-black text-3xl mb-3">spellcheck</span>
+                                <span class="text-[10px] font-bold text-black uppercase tracking-widest">Open
+                                    Tool</span>
+                            </div>
+                            <span class="text-[12px] font-bold text-center">Essay Grader</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <div
+                                class="aspect-square bg-zinc-50 border border-zinc-100 flex flex-col items-center justify-center text-center p-6 rounded-xl cursor-pointer hover:bg-white transition-all">
+                                <span class="material-symbols-outlined text-black text-3xl mb-3">translate</span>
+                                <span class="text-[10px] font-bold text-black uppercase tracking-widest">Open
+                                    Tool</span>
+                            </div>
+                            <span class="text-[12px] font-bold text-center">Translator</span>
+                        </div>
+                    </div>
+
+                    <!-- TAB: SAVED -->
+                    <div id="tab-saved" class="tab-content hidden grid grid-cols-3 gap-4 pb-20">
+                        <div class="flex flex-col gap-2">
+                            <div
+                                class="doc-card group relative aspect-square bg-zinc-100 overflow-hidden rounded-xl cursor-pointer">
+                                <img alt="Saved" class="w-full h-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwWUQf3yC4w7goArrdsgbR5z_238TNpysFN2O6rEw8_EmP3RnAv4yS0zDeJM0kkiLgLeYPLtTltRq9nJaFmwe7pqO074jUVkQqggYv_vSjyEWeatuLKXPPwVjlttPORVKsM6HZ3RnC4DgHP0dLOS_dgFSfeYuSYQPCmj52N0S9H9VOhsPWUVo2zocPwyCYIZOHgsmUf_6LT8NLqjng4ctlCo5FHWyF6IslL_sDSJJQXuyQfCh7-4D-MmQQ0cuUPRP8hTQoqVz1Aqk" />
+                                <div
+                                    class="absolute inset-0 bg-black/50 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200 overlay">
+                                    <div class="flex items-center gap-1.5 text-white font-bold"><span
+                                            class="material-symbols-outlined filled-icon text-[18px]">favorite</span><span
+                                            class="text-[12px]">182</span></div>
+                                    <div class="flex items-center gap-1.5 text-white font-bold"><span
+                                            class="material-symbols-outlined filled-icon text-[18px]">download</span><span
+                                            class="text-[12px]">890</span></div>
+                                </div>
+                            </div>
+                            <span class="text-[12px] font-bold text-center">Logistics Case Study</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <div
+                                class="doc-card group relative aspect-square bg-zinc-100 overflow-hidden rounded-xl cursor-pointer">
+                                <img alt="Saved" class="w-full h-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmPPw2V4WC3IhyrQoGS5k3TEFkdhdYRao9INpPY3cwK_cc8M8RZA5NRapO4JbkhJWdet1yuBUh2y2W1LnDUgx9iVRmTwpzUM0KSEJ2dnTKwE5HzHx2MPCqinwWUWKeNOi0_wGdFAPHTOsgRtvPUQmqH4GqC_pNOBbTnAqEewQEweTxeNSedUGHwNNtWIsgy2QUdkdqc-AUzBwKhBY0uzw1zJmUyT59FoBN0r22kSu7UQXEFr3Idiz7W-68Kcj3qpa6gXcdj60LCxI" />
+                                <div
+                                    class="absolute inset-0 bg-black/50 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200 overlay">
+                                    <div class="flex items-center gap-1.5 text-white font-bold"><span
+                                            class="material-symbols-outlined filled-icon text-[18px]">favorite</span><span
+                                            class="text-[12px]">156</span></div>
+                                    <div class="flex items-center gap-1.5 text-white font-bold"><span
+                                            class="material-symbols-outlined filled-icon text-[18px]">download</span><span
+                                            class="text-[12px]">720</span></div>
+                                </div>
+                            </div>
+                            <span class="text-[12px] font-bold text-center">Strategic Management</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <div
+                                class="doc-card group relative aspect-square bg-zinc-100 overflow-hidden rounded-xl cursor-pointer">
+                                <img alt="Saved" class="w-full h-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNsKDd0hk8jKIOshiIGCAwD3LHR6-l6IvUc39Dl-cXfYISWCSYqOiXuodMtUz3xMvyJYW8MNvWiRGNoA0MT4_kh8HXrrSu0WwkHb3sOtquMww0wapB2zllnPtJ_rH7EbfacZpM8ARJRSIQgmuASJMxI-4diKUa2s6XACXtVkz0tvo2zz7jyTIM7Fsb8LWzEAeNVOlrdpeuoZAZiQj_PQ7e0nYnsdGjYkN2kJ88a39As-t8pkaeoxzB97Sm79PsDcWCpGZuRAfSVGM" />
+                                <div
+                                    class="absolute inset-0 bg-black/50 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200 overlay">
+                                    <div class="flex items-center gap-1.5 text-white font-bold"><span
+                                            class="material-symbols-outlined filled-icon text-[18px]">favorite</span><span
+                                            class="text-[12px]">95</span></div>
+                                    <div class="flex items-center gap-1.5 text-white font-bold"><span
+                                            class="material-symbols-outlined filled-icon text-[18px]">download</span><span
+                                            class="text-[12px]">432</span></div>
+                                </div>
+                            </div>
+                            <span class="text-[12px] font-bold text-center">Neural Networks Guide</span>
+                        </div>
+                    </div>
+
+                    <script>
+                        function switchTab(tabName) {
+                            // Hide all content
+                            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+                            // Show selected
+                            document.getElementById('tab-' + tabName).classList.remove('hidden');
+                            // Reset all tab buttons
+                            document.querySelectorAll('.tab-btn').forEach(btn => {
+                                btn.classList.remove('text-black', 'font-extrabold');
+                                btn.classList.add('text-zinc-400');
+                                btn.querySelector('.tab-line').classList.add('hidden');
+                                btn.querySelector('.material-symbols-outlined').classList.remove('filled-icon');
+                            });
+                            // Activate clicked tab
+                            const activeBtn = document.querySelector('.tab-btn[data-tab="' + tabName + '"]');
+                            activeBtn.classList.add('text-black', 'font-extrabold');
+                            activeBtn.classList.remove('text-zinc-400');
+                            activeBtn.querySelector('.tab-line').classList.remove('hidden');
+                            activeBtn.querySelector('.material-symbols-outlined').classList.add('filled-icon');
+                        }
+                    </script>
+                </div>
+            </div>
+            <aside class="hidden xl:flex flex-col gap-8 w-80 shrink-0 sticky top-4 h-fit p-8">
+                <h3 class="text-[11px] font-bold text-zinc-400 uppercase tracking-[0.15em]">My mentors</h3>
+                <div class="flex flex-col gap-5">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="size-9 rounded-full bg-zinc-100 border border-zinc-100 dark:border-zinc-800"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCaOsNzV949TujtIN9veZJHj7zLcFZdwGRvlzst8yG8NrIPcXi9f2aW4DyG9GSVLULieGARLFgMQYsX-_TZvmLYb0uyKtk8xhAQEBukFS-urmQwoijKp0uumhY802kyD4l0Nr1G_kZ-imiCNfgFsasL7xwrFVr3Th19RpOmGrgpNk3c9cMULmjwymPRLOEFvutDxJCu3hUUcKvTaL8X0XoJ6RZuUYFla8nKWVbMeqEkdmIQGu1_VUJpAC5fWkQqH1UDfDG7JONWgHo'); background-size: cover;">
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-sm font-bold text-black dark:text-white">sarah_stats_99</span>
+                                <span class="text-[10px] text-zinc-400">Popular in Stats</span>
+                            </div>
+                        </div>
+                        <button
+                            class="text-zinc-900 dark:text-zinc-100 hover:text-zinc-500 text-xs font-bold transition-colors">Messages</button>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="size-9 rounded-full bg-zinc-100 border border-zinc-100 dark:border-zinc-800"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCcWdPyBOd2woM7J2DSizFsF83DeLnRPTD5iFD_2YBnpA-_ztnw8fc1nY8Mf5OVD_dFT6qZQ10eRRgY5GOhdKnDHkKEFWQWO0DjUB_e9ohnwVMNOVbrA1XZUUG3pWqf6eyDz-wEgPxhZVjZGxU5RxJlesIpgfmUM-UESKvfkKraxJu5iK_6y5IUrC02z7QwVBOGQmrRnC7I3wiIaYlxmhtHnBlGF-ccEAS4OrckDYpbqNlnzEGJufYQolkG_htzWXo6a92cC3413Fk'); background-size: cover;">
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-sm font-bold text-black dark:text-white">jason_eco_grad</span>
+                                <span class="text-[10px] text-zinc-400">U of T Alumni</span>
+                            </div>
+                        </div>
+                        <button
+                            class="text-zinc-900 dark:text-zinc-100 hover:text-zinc-500 text-xs font-bold transition-colors">Messages</button>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="size-9 rounded-full bg-zinc-100 border border-zinc-100 dark:border-zinc-800"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD2hizfwlkkkpTjL_UEDs-nrdB_fSeLoNdALlPB5n2PHOP5Ow9rAEJdzQdybuZ790Ary9AfJBHLBPE4cGf-soGhr9qO9tsFLoLFWqvg4YHlGz41FHmh30vzqx22LNPZvCasAXcq7Zu5uTVEIEiLmRJdqa5W3YuBSyiwXsyZ-9r2-U7Zi85Z9MuKncyfRVlfp_g6syVUUwG9c7n_vT9wJa_zk8QzQsAG_GBu7Mj6QFBR_TI5n_sNZAQBLaM8l4PVL41RzcAdJ80116g'); background-size: cover;">
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-sm font-bold text-black dark:text-white">maria_notes_22</span>
+                                <span class="text-[10px] text-zinc-400">Active now</span>
+                            </div>
+                        </div>
+                        <button
+                            class="text-zinc-900 dark:text-zinc-100 hover:text-zinc-500 text-xs font-bold transition-colors">Messages</button>
+                    </div>
+                </div>
+
+                <footer class="mt-auto">
+                    <p class="text-[9px] text-zinc-300 uppercase tracking-widest font-bold">© 2024 EduGram Academic</p>
+                </footer>
+            </aside>
+        </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00c2b8",
+                        "background-light": "#ffffff",
+                        "background-dark": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #0066FF 0%, #32FF7E 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-active-line {
+            position: relative;
+        }
+
+        .nav-active-line::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3px;
+            height: 60%;
+            background: linear-gradient(180deg, #0066FF 0%, #32FF7E 100%);
+            border-radius: 0 4px 4px 0;
+        }
+
+        .active-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="bg-white font-display text-slate-900">
+    <main class="max-w-[1440px] mx-auto flex gap-12 px-6 lg:px-10 py-8">
+        <aside class="hidden lg:flex flex-col w-60 shrink-0 h-[calc(100vh-32px)] sticky top-4">
+            <a href="Question.html" class="flex items-center gap-2 mb-4 px-4">
+                <div class="size-8">
+                    <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logo-gradient" x1="0%" x2="100%" y1="0%" y2="100%">
+                                <stop offset="0%" stop-color="#0066FF"></stop>
+                                <stop offset="100%" stop-color="#32FF7E"></stop>
+                            </linearGradient>
+                        </defs>
+                        <path clip-rule="evenodd"
+                            d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z"
+                            fill="url(#logo-gradient)" fill-rule="evenodd"></path>
+                        <path clip-rule="evenodd"
+                            d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z"
+                            fill="url(#logo-gradient)" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <h2 class="text-xl font-bold tracking-tight text-gradient">EduGram</h2>
+            </a>
+            <nav class="flex flex-col gap-1">
+                <a class="flex items-center gap-4 px-4 py-3 rounded-xl text-slate-500 hover:bg-gray-50 transition-all"
+                    href="home_feed.html">
+                    <span class="material-symbols-outlined">home</span>
+                    <span class="text-[15px]">Home Feed</span>
+                </a>
+                <a class="flex items-center gap-4 px-4 py-3 rounded-xl text-slate-500 hover:bg-gray-50 transition-all"
+                    href="explore.html">
+                    <span class="material-symbols-outlined">explore</span>
+                    <span class="text-[15px]">Explore</span>
+                </a>
+                <a class="flex items-center gap-4 px-4 py-3 rounded-xl text-black font-bold nav-active-line"
+                    href="Studygroup.html">
+                    <span class="material-symbols-outlined active-icon">groups</span>
+                    <span class="text-[15px]">Study Groups</span>
+                </a>
+                <a class="flex items-center gap-4 px-4 py-3 rounded-xl text-slate-500 hover:bg-gray-50 transition-all"
+                    href="profile.html">
+                    <span class="material-symbols-outlined">account_circle</span>
+                    <span class="text-[15px]">Profile</span>
+                </a>
+            </nav>
+            <div class="mt-8">
+                <button
+                    class="w-full flex items-center justify-center gap-2 rounded-xl h-12 bg-black text-white font-bold text-sm hover:opacity-90 transition-all">
+                    <span class="material-symbols-outlined text-lg">add</span>
+                    Upload
+                </button>
+            </div>
+        </aside>
+        <section class="flex-1 bg-slate-50/30 rounded-3xl p-4 lg:p-2">
+            <div class="max-w-6xl mx-auto flex flex-col gap-8">
+                <!-- Search & Filters -->
+                <div class="flex flex-col gap-4">
+                    <div class="w-full max-w-2xl">
+                        <div
+                            class="flex h-12 items-stretch rounded-xl bg-gray-50 border border-gray-100 focus-within:border-black focus-within:bg-white transition-all">
+                            <div class="flex items-center justify-center pl-4 text-gray-400">
+                                <span class="material-symbols-outlined text-[20px]">search</span>
+                            </div>
+                            <input
+                                class="w-full border-none bg-transparent px-3 text-sm focus:ring-0 placeholder:text-gray-400"
+                                placeholder="Search for study groups, topics or mentors..." />
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 overflow-x-auto hide-scrollbar">
+                        <button
+                            class="px-4 py-1.5 bg-black text-white rounded-full text-[11px] font-bold tracking-wide whitespace-nowrap">All
+                            Groups</button>
+                        <button
+                            class="px-4 py-1.5 bg-white border border-gray-100 text-slate-600 hover:border-black rounded-full text-[11px] font-bold tracking-wide whitespace-nowrap transition-colors">Science</button>
+                        <button
+                            class="px-4 py-1.5 bg-white border border-gray-100 text-slate-600 hover:border-black rounded-full text-[11px] font-bold tracking-wide whitespace-nowrap transition-colors">Humanities</button>
+                        <button
+                            class="px-4 py-1.5 bg-white border border-gray-100 text-slate-600 hover:border-black rounded-full text-[11px] font-bold tracking-wide whitespace-nowrap transition-colors">Physics</button>
+                        <button
+                            class="px-4 py-1.5 bg-white border border-gray-100 text-slate-600 hover:border-black rounded-full text-[11px] font-bold tracking-wide whitespace-nowrap transition-colors">Computer
+                            Science</button>
+                        <button
+                            class="px-4 py-1.5 bg-white border border-gray-100 text-slate-600 hover:border-black rounded-full text-[11px] font-bold tracking-wide whitespace-nowrap transition-colors">Business</button>
+                        <button
+                            class="px-4 py-1.5 bg-white border border-gray-100 text-slate-600 hover:border-black rounded-full text-[11px] font-bold tracking-wide whitespace-nowrap transition-colors">Engineering</button>
+                    </div>
+                </div>
+                <!-- Section 1: My Groups -->
+                <div class="flex flex-col gap-4 mb-8">
+                    <div class="flex items-center justify-between">
+                        <h2 class="text-[11px] font-black tracking-[0.15em] text-slate-400 uppercase">My Groups</h2>
+                        <a class="text-[11px] font-bold text-black hover:underline" href="#">See all</a>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                        <!-- Card: Advanced Bio-Chemistry -->
+                        <div
+                            class="flex flex-col bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group border border-slate-100">
+                            <div class="relative aspect-[16/10] overflow-hidden">
+                                <div class="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors z-10">
+                                </div>
+                                <div class="w-full h-full bg-cover bg-center"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA14FRy6G-8UMWvB1ore5syqILrk2RhFT5zZrYnrR580GlTgNzEVBXIYR2yrJ2NFHkoXYHp6QibIRmvMaENs3e8l4cSrhfiq-wApD3_0AkVgDSSag3ugBg-9DGZZFsS1IRQlo3_pnksssjBE3LBNvdZ3dy6M_FDPUEsruklcfOzESKtxxYlpcUqz45SkbWcShyxC6Q0fiNyvTXmkb-H-jeMhXknHRgRGpCaKVvXS_JrPwZfAcuW8ITNsAjYomTZ4mHbs9FPkpQc-98");'>
+                                </div>
+                                <div class="absolute top-4 right-4 z-20">
+                                    <span
+                                        class="bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-slate-900 uppercase tracking-widest">Science</span>
+                                </div>
+                            </div>
+                            <div class="p-4 flex flex-col gap-3">
+                                <div class="flex flex-col gap-0.5">
+                                    <h3 class="text-sm font-bold text-slate-900">Advanced Bio-Chemistry</h3>
+                                    <div class="flex items-center gap-2 text-slate-500">
+                                        <span class="material-symbols-outlined text-[14px]">school</span>
+                                        <p class="text-xs font-medium">Dr. Sarah Jenkins</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between py-2 border-y border-slate-50">
+                                    <div class="flex -space-x-2">
+                                        <div class="size-7 rounded-full border-2 border-white bg-slate-200"></div>
+                                        <div class="size-7 rounded-full border-2 border-white bg-slate-200"></div>
+                                        <div
+                                            class="size-7 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center text-[10px] font-bold text-slate-500">
+                                            +42</div>
+                                    </div>
+                                    <p class="text-[10px] font-bold text-slate-400">45 Members</p>
+                                </div>
+                                <div class="flex gap-3">
+                                    <a href="studygroup_view.html"
+                                        class="flex-1 bg-slate-900 text-white py-2 rounded-lg text-xs font-bold hover:bg-slate-800 transition-colors text-center">Open
+                                        Group</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card: Classical Literature -->
+                        <div
+                            class="flex flex-col bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group border border-slate-100">
+                            <div class="relative aspect-[16/10] overflow-hidden">
+                                <div class="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors z-10">
+                                </div>
+                                <div class="w-full h-full bg-cover bg-center"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAsDEpE-m15oZEWpTf_NHf21WLW31rpyAcOYK2_8MKClG-MJGErLDzMn_NrD4vWsUw2X3XIZfVEKfLca3lsaxvt2cDH9b3pEGWrnl_A09wXceYyGzonHRZvQxVff3fhlN-rmblDv6XcdO5l23A_6WgvH9THIrs2T9pW8IGDomGMIa1bNWpA4CogF9_eF4IgM3ZcsGx_MgEG4nVAWNM6ZeJV-QPsKRRRWRsQiI8gPctBb591pn38WWzfVOzGDi6lLZP0EH__gB__3pY");'>
+                                </div>
+                                <div class="absolute top-4 right-4 z-20">
+                                    <span
+                                        class="bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-slate-900 uppercase tracking-widest">Humanities</span>
+                                </div>
+                            </div>
+                            <div class="p-4 flex flex-col gap-3">
+                                <div class="flex flex-col gap-0.5">
+                                    <h3 class="text-sm font-bold text-slate-900">Classical Literature</h3>
+                                    <div class="flex items-center gap-2 text-slate-500">
+                                        <span class="material-symbols-outlined text-[14px]">school</span>
+                                        <p class="text-xs font-medium">Prof. Robert Langdon</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between py-2 border-y border-slate-50">
+                                    <div class="flex -space-x-2">
+                                        <div class="size-7 rounded-full border-2 border-white bg-slate-200"></div>
+                                        <div class="size-7 rounded-full border-2 border-white bg-slate-200"></div>
+                                        <div
+                                            class="size-7 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center text-[10px] font-bold text-slate-500">
+                                            +29</div>
+                                    </div>
+                                    <p class="text-[10px] font-bold text-slate-400">32 Members</p>
+                                </div>
+                                <div class="flex gap-3">
+                                    <a href="studygroup_view.html"
+                                        class="flex-1 bg-slate-900 text-white py-2 rounded-lg text-xs font-bold hover:bg-slate-800 transition-colors text-center">Open
+                                        Group</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card: Data Science & AI -->
+                        <div
+                            class="flex flex-col bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group border border-slate-100">
+                            <div class="relative aspect-[16/10] overflow-hidden">
+                                <div class="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors z-10">
+                                </div>
+                                <div class="w-full h-full bg-cover bg-center"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCkfBZTxw54gU21vD-g7zGesAr3YJNvmT6n4e6-kgv23SSRhfllepFqKBeMIw0ShV9TBk5W8hsCpRy6td04Ng3i7Z1uL8m-Ovx1WBQrS5qJkaX2JiFsubabJcNdjNZdnGmDlShXxvNPxlxRbnMx5TbSgaWkekKI984jGHDcTR4TDK7LZ3unWOnThVUFWsVvQ6x75Hiy9Okpip1ZgXI0I_b-n6uRrkegVtxNRfap9AO9ehCIHjLdNs-g25JNsiT01JVwcn0hsJRlllo");'>
+                                </div>
+                                <div class="absolute top-4 right-4 z-20">
+                                    <span
+                                        class="bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-slate-900 uppercase tracking-widest">Technology</span>
+                                </div>
+                            </div>
+                            <div class="p-4 flex flex-col gap-3">
+                                <div class="flex flex-col gap-0.5">
+                                    <h3 class="text-sm font-bold text-slate-900">Data Science &amp; AI</h3>
+                                    <div class="flex items-center gap-2 text-slate-500">
+                                        <span class="material-symbols-outlined text-[14px]">school</span>
+                                        <p class="text-xs font-medium">Dr. Emily Zhang</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between py-2 border-y border-slate-50">
+                                    <div class="flex -space-x-2">
+                                        <div class="size-7 rounded-full border-2 border-white bg-slate-200"></div>
+                                        <div class="size-7 rounded-full border-2 border-white bg-slate-200"></div>
+                                        <div
+                                            class="size-7 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center text-[10px] font-bold text-slate-500">
+                                            +56</div>
+                                    </div>
+                                    <p class="text-[10px] font-bold text-slate-400">58 Members</p>
+                                </div>
+                                <div class="flex gap-3">
+                                    <a href="studygroup_view.html"
+                                        class="flex-1 bg-slate-900 text-white py-2 rounded-lg text-xs font-bold hover:bg-slate-800 transition-colors text-center">Open
+                                        Group</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 2: More Groups -->
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-center justify-between">
+                        <h2 class="text-[11px] font-black tracking-[0.15em] text-slate-400 uppercase">More Groups</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                        <!-- Card: Quantum Physics -->
+                        <div
+                            class="flex flex-col bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group border border-slate-100">
+                            <div class="relative aspect-[16/10] overflow-hidden">
+                                <div class="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors z-10">
+                                </div>
+                                <div class="w-full h-full bg-cover bg-center"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA3hAxAfPdDDawqSwqqQdbnBlqxsZ9VvXemtVK0vSrC7emd3djBpqKjLFaI4eXLDaZo-ZSBz51fN4rh7oWIyXniJanDI8KY76KU1vFz6tUKNypCCnka5aR6T_1s0ane6LQWqDZq6jrSDdamgFPolx8JMPEF1ixKbgu3fPJavmktfQC-JFx89_rAZEgaT9kbYY3XDisYyFr5t1U17lCQnNt8cdK24LIwQy9VihhFsoQhzGv6jf7EeiLqQ3aLVPeXCVE75uH-TMw8PHA");'>
+                                </div>
+                                <div class="absolute top-4 right-4 z-20">
+                                    <span
+                                        class="bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-slate-900 uppercase tracking-widest">Physics</span>
+                                </div>
+                            </div>
+                            <div class="p-4 flex flex-col gap-3">
+                                <div class="flex flex-col gap-0.5">
+                                    <h3 class="text-sm font-bold text-slate-900">Quantum Physics</h3>
+                                    <div class="flex items-center gap-2 text-slate-500">
+                                        <span class="material-symbols-outlined text-[14px]">school</span>
+                                        <p class="text-xs font-medium">Dr. Alan Turing</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between py-2 border-y border-slate-50">
+                                    <div class="flex -space-x-2">
+                                        <div class="size-7 rounded-full border-2 border-white bg-slate-200"></div>
+                                        <div
+                                            class="size-7 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center text-[10px] font-bold text-slate-500">
+                                            +25</div>
+                                    </div>
+                                    <p class="text-[10px] font-bold text-slate-400">28 Members</p>
+                                </div>
+                                <div class="flex gap-3">
+                                    <button
+                                        class="flex-1 bg-slate-900 text-white py-2 rounded-lg text-xs font-bold hover:bg-slate-800 transition-colors">Join
+                                        Group</button>
+                                    <a href="studygroup_view.html"
+                                        class="px-3 bg-slate-100 text-slate-900 py-2 rounded-lg text-xs font-bold hover:bg-slate-200 transition-colors text-center">View</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Skeleton Card 1 -->
+                        <div
+                            class="flex flex-col bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100">
+                            <div class="relative aspect-[16/10] bg-slate-100"></div>
+                            <div class="p-4 flex flex-col gap-3">
+                                <div class="h-5 w-3/4 bg-slate-100 rounded"></div>
+                                <div class="h-3 w-1/2 bg-slate-100 rounded"></div>
+                                <div class="flex gap-3 mt-2">
+                                    <div class="h-8 flex-1 bg-slate-100 rounded-lg"></div>
+                                    <div class="h-8 w-12 bg-slate-100 rounded-lg"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Skeleton Card 2 -->
+                        <div
+                            class="flex flex-col bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100">
+                            <div class="relative aspect-[16/10] bg-slate-100"></div>
+                            <div class="p-4 flex flex-col gap-3">
+                                <div class="h-5 w-3/4 bg-slate-100 rounded"></div>
+                                <div class="h-3 w-1/2 bg-slate-100 rounded"></div>
+                                <div class="flex gap-3 mt-2">
+                                    <div class="h-8 flex-1 bg-slate-100 rounded-lg"></div>
+                                    <div class="h-8 w-12 bg-slate-100 rounded-lg"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Load More -->
+                <div class="flex items-center justify-center py-10">
+                    <button
+                        class="flex items-center gap-2 px-8 py-3 rounded-full border border-slate-200 text-slate-600 font-bold hover:bg-white transition-all shadow-sm">
+                        <span class="material-symbols-outlined text-[20px]">expand_more</span>
+                        Load More Groups
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

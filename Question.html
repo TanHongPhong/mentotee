@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Thiết lập Hồ sơ kép - EduGram</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ecb6",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#10221d",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #13ecb633;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <!-- Header -->
+            <header
+                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50 px-6 md:px-20 py-3">
+                <a href="Question.html" class="flex items-center gap-3">
+                    <div class="size-8 text-primary">
+                        <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd"
+                                d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z"
+                                fill="currentColor" fill-rule="evenodd"></path>
+                            <path clip-rule="evenodd"
+                                d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z"
+                                fill="currentColor" fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-xl font-bold leading-tight tracking-tight">EduGram</h2>
+                </a>
+                <button
+                    class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary/10 text-primary hover:bg-primary/20 transition-all text-sm font-bold">
+                    <span>Bỏ qua</span>
+                </button>
+            </header>
+            <main class="flex flex-1 justify-center py-8 px-4 md:px-10">
+                <div class="max-w-[720px] w-full flex flex-col gap-10">
+                    <!-- Title Section -->
+                    <div class="flex flex-col gap-2">
+                        <h1
+                            class="text-3xl md:text-4xl font-black leading-tight tracking-tight text-slate-900 dark:text-white">
+                            Thiết lập Hồ sơ kép</h1>
+                        <p class="text-slate-500 dark:text-slate-400 text-lg">Hoàn thiện cả hai vai trò để tối ưu hóa
+                            trải nghiệm kết nối của bạn.</p>
+                    </div>
+                    <div class="flex flex-col gap-8">
+                        <!-- Section 1: Mentor Experience -->
+                        <div
+                            class="flex flex-col bg-white dark:bg-slate-800/50 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="p-2 bg-primary/10 rounded-lg text-primary">
+                                    <span class="material-symbols-outlined">school</span>
+                                </div>
+                                <h2 class="text-xl font-bold">1. Kinh nghiệm Mentor</h2>
+                            </div>
+                            <div class="space-y-6">
+                                <div>
+                                    <p class="text-sm font-semibold mb-3 text-slate-700 dark:text-slate-300">1. Bạn muốn
+                                        mentoring trong những lĩnh vực nào?</p>
+                                    <div class="flex flex-wrap gap-2"><button
+                                            class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary text-slate-900 text-sm font-medium border border-primary"><span
+                                                class="material-symbols-outlined text-sm">palette</span> UI/UX
+                                            Design</button><button
+                                            class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium hover:border-primary transition-all border border-transparent"><span
+                                                class="material-symbols-outlined text-sm">code</span> Web
+                                            Development</button><button
+                                            class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium hover:border-primary transition-all border border-transparent"><span
+                                                class="material-symbols-outlined text-sm">database</span> Data
+                                            Science</button><button
+                                            class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium hover:border-primary transition-all border border-transparent"><span
+                                                class="material-symbols-outlined text-sm">smartphone</span> Mobile
+                                            App</button></div>
+                                </div>
+                                <div class="flex flex-col gap-2"><label
+                                        class="text-sm font-semibold text-slate-700 dark:text-slate-300">2. Bạn tự tin
+                                        nhất ở chủ đề/kỹ năng cụ thể nào?</label><textarea
+                                        class="w-full rounded-lg border-slate-200 dark:border-slate-700 dark:bg-slate-900 focus:ring-primary focus:border-primary p-3 resize-none"
+                                        placeholder="ví dụ: React, System Design, CV/Interview..." rows="2"></textarea>
+                                </div>
+                                <div class="flex flex-col gap-2"><label
+                                        class="text-sm font-semibold text-slate-700 dark:text-slate-300">3. Mục tiêu hỗ
+                                        trợ mentee chính của bạn là gì?</label><select
+                                        class="w-full rounded-lg border-slate-200 dark:border-slate-700 dark:bg-slate-900 focus:ring-primary focus:border-primary p-3">
+                                        <option>Tìm việc</option>
+                                        <option>Chuyển ngành</option>
+                                        <option>Làm dự án</option>
+                                        <option>Nâng cấp kỹ năng</option>
+                                        <option>Định hướng dài hạn</option>
+                                    </select></div>
+                                <div class="flex flex-col gap-6">
+                                    <div class="flex flex-col gap-2">
+                                        <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">4. Bạn
+                                            phù hợp với mentee ở mức độ nào?</label>
+                                        <select
+                                            class="w-full rounded-lg border-slate-200 dark:border-slate-700 dark:bg-slate-900 focus:ring-primary focus:border-primary p-3">
+                                            <option>Mới bắt đầu</option>
+                                            <option>Đã có nền tảng</option>
+                                            <option>Nâng cao</option>
+                                        </select>
+                                    </div>
+                                    <div class="flex flex-col gap-2">
+                                        <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">5. Hình
+                                            thức mentoring mong muốn?</label>
+                                        <div class="flex flex-wrap gap-4 pt-2">
+                                            <label
+                                                class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 cursor-pointer">
+                                                <input class="rounded text-primary focus:ring-primary border-slate-200"
+                                                    type="checkbox" /> 1-1
+                                            </label>
+                                            <label
+                                                class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 cursor-pointer">
+                                                <input class="rounded text-primary focus:ring-primary border-slate-200"
+                                                    type="checkbox" /> Theo nhóm
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Section 2: Mentee Orientation -->
+                        <div
+                            class="flex flex-col bg-white dark:bg-slate-800/50 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="p-2 bg-primary/10 rounded-lg text-primary">
+                                    <span class="material-symbols-outlined">rocket_launch</span>
+                                </div>
+                                <h2 class="text-xl font-bold">2. Định hướng Mentee</h2>
+                            </div>
+                            <div class="space-y-6">
+                                <div class="flex flex-col gap-2"><label
+                                        class="text-sm font-semibold text-slate-700 dark:text-slate-300">1. Bạn muốn
+                                        phát triển lĩnh vực nào nhất lúc này? (tối đa 2)</label>
+                                    <div class="relative"><input
+                                            class="w-full rounded-lg border-slate-200 dark:border-slate-700 dark:bg-slate-900 focus:ring-primary focus:border-primary p-3 pl-10"
+                                            placeholder="Tìm kiếm kỹ năng bạn quan tâm..." type="text" /><span
+                                            class="material-symbols-outlined absolute left-3 top-3 text-slate-400">search</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-2"><label
+                                        class="text-sm font-semibold text-slate-700 dark:text-slate-300">2. Mục tiêu cụ
+                                        thể trong 1-3 tháng tới?</label><textarea
+                                        class="w-full rounded-lg border-slate-200 dark:border-slate-700 dark:bg-slate-900 focus:ring-primary focus:border-primary p-3 resize-none"
+                                        placeholder="ví dụ: hoàn thành portfolio, pass phỏng vấn..."
+                                        rows="2"></textarea></div>
+                                <div class="flex flex-col gap-2"><label
+                                        class="text-sm font-semibold text-slate-700 dark:text-slate-300">3. Trình độ
+                                        hiện tại của bạn?</label><select
+                                        class="w-full rounded-lg border-slate-200 dark:border-slate-700 dark:bg-slate-900 focus:ring-primary focus:border-primary p-3">
+                                        <option>Mới bắt đầu</option>
+                                        <option>Biết cơ bản</option>
+                                        <option>Đã làm dự án</option>
+                                        <option>Nâng cao</option>
+                                    </select></div>
+                                <div class="flex flex-col gap-2"><label
+                                        class="text-sm font-semibold text-slate-700 dark:text-slate-300">4. Bạn cần
+                                        mentor hỗ trợ phần nào nhất?</label>
+                                    <div class="flex flex-wrap gap-2"><button
+                                            class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-xs font-medium text-slate-600 dark:text-slate-300 border border-transparent hover:border-primary transition-all">Lộ
+                                            trình học</button><button
+                                            class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-xs font-medium text-slate-600 dark:text-slate-300 border border-transparent hover:border-primary transition-all">Kiến
+                                            thức nền</button><button
+                                            class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-xs font-medium text-slate-600 dark:text-slate-300 border border-transparent hover:border-primary transition-all">Bài
+                                            tập &amp; review</button><button
+                                            class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-xs font-medium text-slate-600 dark:text-slate-300 border border-transparent hover:border-primary transition-all">Dự
+                                            án</button><button
+                                            class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-xs font-medium text-slate-600 dark:text-slate-300 border border-transparent hover:border-primary transition-all">CV
+                                            &amp; phỏng vấn</button><button
+                                            class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-xs font-medium text-slate-600 dark:text-slate-300 border border-transparent hover:border-primary transition-all">Kỷ
+                                            luật học tập</button></div>
+                                </div>
+                                <div class="flex flex-col gap-2"><label
+                                        class="text-sm font-semibold text-slate-700 dark:text-slate-300">5. Cam kết thời
+                                        gian của bạn?</label>
+                                    <div class="space-y-4">
+                                        <div>
+                                            <p class="text-xs text-slate-500 dark:text-slate-400 mb-2">Chọn các ngày
+                                                rảnh trong tuần:</p>
+                                            <div class="grid grid-cols-7 gap-2">
+                                                <button
+                                                    class="flex items-center justify-center aspect-square rounded-lg bg-primary text-slate-900 text-xs font-bold border border-primary">T2</button>
+                                                <button
+                                                    class="flex items-center justify-center aspect-square rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-bold hover:border-primary transition-all">T3</button>
+                                                <button
+                                                    class="flex items-center justify-center aspect-square rounded-lg bg-primary text-slate-900 text-xs font-bold border border-primary">T4</button>
+                                                <button
+                                                    class="flex items-center justify-center aspect-square rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-bold hover:border-primary transition-all">T5</button>
+                                                <button
+                                                    class="flex items-center justify-center aspect-square rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-bold hover:border-primary transition-all">T6</button>
+                                                <button
+                                                    class="flex items-center justify-center aspect-square rounded-lg bg-primary text-slate-900 text-xs font-bold border border-primary">T7</button>
+                                                <button
+                                                    class="flex items-center justify-center aspect-square rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-bold hover:border-primary transition-all text-red-500">CN</button>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">Chọn khung giờ
+                                                chi tiết:</p>
+                                            <div class="space-y-4">
+                                                <!-- Sáng Section -->
+                                                <div class="flex flex-col gap-2">
+                                                    <div class="flex items-center gap-2">
+                                                        <span
+                                                            class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-700 text-[10px] font-bold text-slate-500 uppercase tracking-wide">Sáng</span>
+                                                    </div>
+                                                    <div class="flex flex-wrap gap-2">
+                                                        <button
+                                                            class="flex-1 min-w-[100px] px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-[11px] text-slate-500 dark:text-slate-400 hover:border-primary transition-all font-display">8:00
+                                                            - 10:00</button>
+                                                        <button
+                                                            class="flex-1 min-w-[100px] px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-[11px] text-slate-500 dark:text-slate-400 hover:border-primary transition-all font-display">10:00
+                                                            - 12:00</button>
+                                                    </div>
+                                                </div>
+                                                <!-- Chiều Section -->
+                                                <div class="flex flex-col gap-2">
+                                                    <div class="flex items-center gap-2">
+                                                        <span
+                                                            class="px-2 py-0.5 rounded bg-primary/20 text-[10px] font-bold text-primary uppercase tracking-wide">Chiều</span>
+                                                    </div>
+                                                    <div class="flex flex-wrap gap-2">
+                                                        <button
+                                                            class="flex-1 min-w-[100px] px-3 py-2 rounded-lg bg-primary/20 border border-primary text-[11px] text-slate-900 dark:text-primary font-bold font-display">13:00
+                                                            - 15:00</button>
+                                                        <button
+                                                            class="flex-1 min-w-[100px] px-3 py-2 rounded-lg bg-primary/20 border border-primary text-[11px] text-slate-900 dark:text-primary font-bold font-display">15:00
+                                                            - 17:00</button>
+                                                    </div>
+                                                </div>
+                                                <!-- Tối Section -->
+                                                <div class="flex flex-col gap-2">
+                                                    <div class="flex items-center gap-2">
+                                                        <span
+                                                            class="px-2 py-0.5 rounded bg-primary text-[10px] font-bold text-slate-900 uppercase tracking-wide">Tối</span>
+                                                    </div>
+                                                    <div class="flex flex-wrap gap-2">
+                                                        <button
+                                                            class="flex-1 min-w-[100px] px-3 py-2 rounded-lg bg-primary text-slate-900 text-[11px] font-bold font-display shadow-sm shadow-primary/30">18:00
+                                                            - 20:00</button>
+                                                        <button
+                                                            class="flex-1 min-w-[100px] px-3 py-2 rounded-lg bg-primary text-slate-900 text-[11px] font-bold font-display shadow-sm shadow-primary/30">20:00
+                                                            - 22:00</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-primary text-sm">info</span>
+                                            <p class="text-[10px] text-slate-500 dark:text-slate-400 italic">Ưu tiên các
+                                                buổi tối và cuối tuần để dễ dàng kết nối hơn.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Footer Action -->
+                    <div
+                        class="flex flex-col items-center gap-4 py-6 border-t border-slate-100 dark:border-slate-800 mt-4">
+                        <a href="home_feed.html"
+                            class="w-full md:w-auto min-w-[320px] bg-primary text-slate-900 font-bold text-lg py-4 px-8 rounded-xl shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+                            <span>Hoàn tất hồ sơ</span>
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                        <p class="text-slate-400 text-sm">Bằng cách tiếp tục, bạn đồng ý với Điều khoản của EduGram</p>
+                    </div>
+                </div>
+            </main>
+            <!-- Quick Illustration Section (Optional floating style) -->
+            <div class="hidden xl:block fixed bottom-10 right-10 w-64 h-64 opacity-20 pointer-events-none">
+                <div class="relative w-full h-full">
+                    <div class="absolute inset-0 bg-primary rounded-full blur-3xl"></div>
+                    <img alt="Abstract mentor and mentee connecting"
+                        class="w-full h-full object-cover rounded-full grayscale mix-blend-multiply"
+                        data-alt="Modern abstract illustration of two people learning together"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHfQ91fFT0DQYQ3c5qrlcElSq5c-neyvEAP37hKtUatvuLXu9TScURRiBaT0I-KviVLfAtVV3gxRXNByqCVd9KEuchpArqR6UZfY1Pfsay2nAT0wUVTB1PzXmbZLXg7uo92XPEwgZcKF4IT1shtjgtirprkbGoUZ9BNBdTWZngSvOuGIvwsb7mV0kYvZMSdb90cV-j8aAf1-q6KJmrwoHcxkov2dDWcxo-C5TlIxNls_rp3bODu7HepVK3XZlIkCc1EPpheJ_lsDrC" />
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>EduGram - Study Group</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "brand-blue": "#0066FF",
+                        "brand-lime": "#32FF7E",
+                        "background-light": "#FFFFFF",
+                        "background-dark": "#0B1120",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    backgroundImage: {
+                        'primary-gradient': 'linear-gradient(135deg, #0066FF 0%, #32FF7E 100%)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                font-family: "Plus Jakarta Sans", sans-serif;
+                
+            }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .active-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #0066FF 0%, #32FF7E 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-active-line {
+            position: relative;
+        }
+        .nav-active-line::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0.5rem;
+            right: 0.5rem;
+            height: 2px;
+            background: linear-gradient(135deg, #0066FF 0%, #32FF7E 100%);
+            border-radius: 99px;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="bg-white font-display text-slate-900">
+    <main class="max-w-[1440px] mx-auto flex gap-12 px-6 lg:px-10 py-8">
+        <aside class="hidden lg:flex flex-col w-60 shrink-0 h-[calc(100vh-32px)] sticky top-4">
+            <a href="Question.html" class="flex items-center gap-2 mb-4 px-4">
+                <div class="size-8">
+                    <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logo-gradient" x1="0%" x2="100%" y1="0%" y2="100%">
+                                <stop offset="0%" stop-color="#0066FF"></stop>
+                                <stop offset="100%" stop-color="#32FF7E"></stop>
+                            </linearGradient>
+                        </defs>
+                        <path clip-rule="evenodd"
+                            d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z"
+                            fill="url(#logo-gradient)" fill-rule="evenodd"></path>
+                        <path clip-rule="evenodd"
+                            d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z"
+                            fill="url(#logo-gradient)" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <h2 class="text-xl font-bold tracking-tight text-gradient">EduGram</h2>
+            </a>
+            <nav class="flex flex-col gap-1">
+                <a class="flex items-center gap-4 px-4 py-3 rounded-xl text-slate-500 hover:bg-gray-50 transition-all"
+                    href="home_feed.html">
+                    <span class="material-symbols-outlined">home</span>
+                    <span class="text-[15px]">Home Feed</span>
+                </a>
+                <a class="flex items-center gap-4 px-4 py-3 rounded-xl text-slate-500 hover:bg-gray-50 transition-all"
+                    href="explore.html">
+                    <span class="material-symbols-outlined">explore</span>
+                    <span class="text-[15px]">Explore</span>
+                </a>
+                <a class="flex items-center gap-4 px-4 py-3 rounded-xl text-slate-500 hover:bg-gray-50 transition-all"
+                    href="Studygroup.html">
+                    <span class="material-symbols-outlined active-icon">groups</span>
+                    <span class="text-[15px]">Study Groups</span>
+                </a>
+                <a class="flex items-center gap-4 px-4 py-3 rounded-xl text-slate-500 hover:bg-gray-50 transition-all"
+                    href="profile.html">
+                    <span class="material-symbols-outlined">account_circle</span>
+                    <span class="text-[15px]">Profile</span>
+                </a>
+            </nav>
+            <div class="mt-8">
+                <button
+                    class="w-full flex items-center justify-center gap-2 rounded-xl h-12 bg-black text-white font-bold text-sm hover:opacity-90 transition-all">
+                    <span class="material-symbols-outlined text-lg">add</span>
+                    Upload
+                </button>
+            </div>
+        </aside>
+        <section class="flex-1 max-w-[800px] flex flex-col gap-0">
+            <div class="w-full h-64 rounded-[2rem] overflow-hidden border border-gray-100 bg-gray-50">
+                <div class="w-full h-full bg-cover bg-center"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCHqXuFNY-kR0GLAxHZx0roO5XfOys1LXf2XfxQrjeSOSd2hKZBVDHTGFt6rF23qkrrM9AQd18iCtPcg1CQRwYcNKnGyELhF50u8Awe8czDNHck3gFU4mR94xzWucDShm1iA0_Vz17NltXzwx0kF_6mPtjhb1SaGW9wppcaETXE0cOOqALunSukUHxRtWqYxjxpxoSJPX3Pj8Eed0SxuafISxaVOd6ldu35ePlHsMJNBEJORvUZw1G-90YXlKNXjtgh-550pc7Q474');">
+                </div>
+            </div>
+            <div class="mt-8">
+                <div class="flex items-end justify-between px-2">
+                    <div>
+                        <h2 class="text-3xl font-bold text-slate-900">Advanced Bio-Chemistry Group</h2>
+                        <p class="text-slate-400 text-[13px] mt-1 font-medium">Mentor: <span
+                                class="text-[#0066FF] font-bold">Dr. Sarah Jenkins</span> • 24 Active Members</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <button
+                            class="px-6 py-2.5 border border-gray-100 rounded-xl text-xs font-bold text-slate-900 hover:bg-gray-50 transition-all">Invite</button>
+                        <button
+                            class="px-6 py-2.5 bg-black text-white rounded-xl text-xs font-bold hover:opacity-90 transition-all">Join
+                            Meeting</button>
+                    </div>
+                </div>
+                <div class="mt-8 border-b border-gray-100 flex gap-10 px-2">
+                    <div class="pb-4 relative text-[13px] font-bold text-black cursor-pointer nav-active-line">
+                        Feed
+                    </div>
+                    <div
+                        class="pb-4 text-[13px] font-bold text-slate-400 cursor-pointer hover:text-black transition-colors">
+                        Files</div>
+                    <div
+                        class="pb-4 text-[13px] font-bold text-slate-400 cursor-pointer hover:text-black transition-colors">
+                        Roadmap</div>
+                    <div
+                        class="pb-4 text-[13px] font-bold text-slate-400 cursor-pointer hover:text-black transition-colors">
+                        Project</div>
+                </div>
+            </div>
+            <div class="py-10 flex flex-col gap-12 max-w-[640px]">
+                <article class="bg-white group">
+                    <div class="mb-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="size-10 rounded-full p-0.5 bg-primary-gradient">
+                                    <div class="size-full rounded-full bg-white p-[1.5px]">
+                                        <div class="size-full rounded-full bg-cover bg-center"
+                                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCz6hw3NUrjCiLLc9B571F3v7583MDBoIKYjsYgIXKhiALGXzud1LMMYfJ3cVxoL0RsZv9fbfla2KBTgjFQwI4RofX-BCa27z00zviVrjYii2be63WwjY5m8FDwm-xRDqiEnPQIw1YSGdR70Orahzxp4ds5b8MWepXn3FerU1xWdrlEtorEnk1KOv8HtKDeDAXPBpsF4VVw4WKPiy8fXPrMqUkaUvOTKj--n4pAoVU_ysff5-b82TBkQnPcCH0bomNDhyE8ibhC8LQ');">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-bold text-slate-900 leading-tight">Liam Chen</h3>
+                                    <p class="text-[12px] text-slate-400">University Student • 2h ago</p>
+                                </div>
+                            </div>
+                            <button class="text-slate-400 hover:text-black transition-colors">
+                                <span class="material-symbols-outlined">more_horiz</span>
+                            </button>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <span
+                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest bg-gray-50 px-2 py-0.5 rounded">CHEM302</span>
+                            </div>
+                            <h2 class="text-xl font-bold text-slate-900 leading-tight mb-2">Molecular Enzyme Kinetics
+                            </h2>
+                            <p class="text-sm text-slate-500 leading-relaxed max-w-[90%]">
+                                Sharing my latest notes on molecular enzyme kinetics from yesterday's lecture. Hope this
+                                helps everyone for the quiz!
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-gray-100 bg-gray-50">
+                        <div
+                            class="absolute inset-0 p-12 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
+                            <div class="w-full h-full bg-white rounded shadow-lg p-6 flex flex-col gap-3">
+                                <div class="h-3 w-3/4 bg-gray-50 rounded"></div>
+                                <div class="h-2 w-full bg-gray-50 rounded"></div>
+                                <div class="h-2 w-full bg-gray-50 rounded"></div>
+                                <div class="h-2 w-2/3 bg-gray-50 rounded"></div>
+                                <div class="mt-auto h-24 w-full bg-gray-50/50 rounded-xl border border-gray-100"></div>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute top-4 left-4 bg-white/90 backdrop-blur shadow-sm px-3 py-1.5 rounded-lg text-[10px] font-black text-black uppercase tracking-tight">
+                            PDF • NOTES
+                        </div>
+                        <button
+                            class="absolute bottom-4 right-4 flex items-center gap-2 bg-white text-black px-4 py-2.5 rounded-xl font-bold text-xs shadow-xl border border-gray-100 hover:bg-gray-50 transition-all translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+                            <span class="material-symbols-outlined text-lg">download</span>
+                            Download
+                        </button>
+                    </div>
+                    <div class="flex items-center justify-between mt-4 px-1">
+                        <div class="flex items-center gap-6">
+                            <button class="flex items-center gap-1.5 text-slate-900 hover:opacity-60 transition-all">
+                                <span class="material-symbols-outlined text-[26px]">favorite</span>
+                                <span class="text-sm font-bold">24</span>
+                            </button>
+                            <button class="flex items-center gap-1.5 text-slate-900 hover:opacity-60 transition-all">
+                                <span class="material-symbols-outlined text-[26px]">chat_bubble</span>
+                                <span class="text-sm font-bold">5</span>
+                            </button>
+                            <button class="flex items-center text-slate-900 hover:opacity-60 transition-all">
+                                <span class="material-symbols-outlined text-[26px]">share</span>
+                            </button>
+                        </div>
+                        <button class="text-slate-900 hover:opacity-60 transition-all">
+                            <span class="material-symbols-outlined text-[26px]">bookmark</span>
+                        </button>
+                    </div>
+                </article>
+                <article class="bg-white group">
+                    <div class="mb-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="size-10 rounded-full p-0.5 bg-primary-gradient">
+                                    <div class="size-full rounded-full bg-white p-[1.5px]">
+                                        <div class="size-full rounded-full bg-cover bg-center"
+                                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDKTBvJZ0oQto5NvNoYF6e5gJi3k8htS-txwD6X6PJbuaNLvi6QZsJyyQyhud6jWDGS241-cxo0vMA5iehelYo2Oy_RV3alI0zPuNnsB1cT3Nb1oSrHVGcXoRwfA9XEyq5Fc04zyidFPgd7ti45NCq7yZe54UY9O01LRvhtpwsPSL9CqZLy3UrZOEaBr95RxtdCnwJCyYHID6mdASe_kc4ULlj_7DIvjcgqhMZFiBLFz2aPHgHYxJd92tdy8GBmz65xZUs4d0OsOTA');">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-bold text-slate-900 leading-tight">Emma Wilson</h3>
+                                    <p class="text-[12px] text-slate-400">Biology Major • 5h ago</p>
+                                </div>
+                            </div>
+                            <button class="text-slate-400 hover:text-black transition-colors">
+                                <span class="material-symbols-outlined">more_horiz</span>
+                            </button>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <span
+                                    class="text-[10px] font-bold text-slate-400 uppercase tracking-widest bg-gray-50 px-2 py-0.5 rounded">DIAGRAM</span>
+                            </div>
+                            <h2 class="text-xl font-bold text-slate-900 leading-tight mb-2">Krebs Cycle Breakdown</h2>
+                            <p class="text-sm text-slate-500 leading-relaxed max-w-[90%]">
+                                Found this amazing visual breakdown of the Krebs cycle. Much easier to visualize the
+                                flow now.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-gray-100 bg-gray-50">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBEQ0UD2IIFLWCUxt6xuOHHHRcCzxHIAyIJplwGfDb4051IgEfB3a_hZyVS0Gn7tWfIW7V9LhTFsGO3rDf6NZ4PcMTPc3q4LpqKlsPqz-r6Sn1wOdcZPKnSIWWOJOm988Jz5bOqr0J557kBeiU8Iwnsnj5tt_FUZLyenRYwMP2QQJzgBIeBb2tN-qVAMuvDmFPFF2urHBBiOMgQCneqqSWpMtQlG0qI5U07dl4JteiRhbRuyRI1gFiG-hLJ_s4BuJbOxBRLc1L6S4c');">
+                        </div>
+                        <div
+                            class="absolute top-4 left-4 bg-white/90 backdrop-blur shadow-sm px-3 py-1.5 rounded-lg text-[10px] font-black text-black uppercase tracking-tight">
+                            IMAGE • DIAGRAM
+                        </div>
+                        <button
+                            class="absolute bottom-4 right-4 flex items-center gap-2 bg-white text-black px-4 py-2.5 rounded-xl font-bold text-xs shadow-xl border border-gray-100 hover:bg-gray-50 transition-all translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+                            <span class="material-symbols-outlined text-lg">visibility</span>
+                            View Detail
+                        </button>
+                    </div>
+                    <div class="flex items-center justify-between mt-4 px-1">
+                        <div class="flex items-center gap-6">
+                            <button class="flex items-center gap-1.5 text-slate-900 hover:opacity-60 transition-all">
+                                <span class="material-symbols-outlined text-[26px]">favorite</span>
+                                <span class="text-sm font-bold">15</span>
+                            </button>
+                            <button class="flex items-center gap-1.5 text-slate-900 hover:opacity-60 transition-all">
+                                <span class="material-symbols-outlined text-[26px]">chat_bubble</span>
+                                <span class="text-sm font-bold">2</span>
+                            </button>
+                            <button class="flex items-center text-slate-900 hover:opacity-60 transition-all">
+                                <span class="material-symbols-outlined text-[26px]">share</span>
+                            </button>
+                        </div>
+                        <button class="text-slate-900 hover:opacity-60 transition-all">
+                            <span class="material-symbols-outlined text-[26px]">bookmark</span>
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <div class="fixed bottom-6 right-6 z-[100] flex flex-col items-end gap-4">
+            <!-- Collapsed chat pill button -->
+            <button id="chat-pill"
+                onclick="document.getElementById('chat-box').style.display='flex'; document.getElementById('chat-pill').style.display='none';"
+                class="flex items-center gap-3 bg-[#1E1F22] text-white pl-4 pr-3 py-2.5 rounded-full shadow-2xl hover:bg-[#2B2D31] transition-all cursor-pointer border border-white/10"
+                style="display:none;">
+                <span class="material-symbols-outlined text-[18px]">send</span>
+                <span class="text-sm font-bold">Tin nhắn</span>
+                <div class="flex -space-x-1.5">
+                    <div class="size-7 rounded-full bg-cover bg-center border-2 border-[#1E1F22]"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAw_TqEbvqFEQ1eu-pdripRVdPyNxs1pM5yiErkcA9Ce3rq_oiqRWUd6oM96maxZhkoKm0KHoTOw2boks9aR1vaU5oWtO9QkkovbsbbJFvXI4fUsLwufP5-8I4-ciT7sECbWemXWmOaNpfzLbOnSkE8JrIi5xNkXGchBCCR7uDlL-hp3EDE3ZJARyNjVje3tUhmzDEr02IWr3cTyTEo7XkcR5YbpT-H4u6Ku8x96tsxS_M0mDiBszcgcb_nUbb0gE9H-3Bi5xjuJDk');">
+                    </div>
+                    <div class="size-7 rounded-full bg-cover bg-center border-2 border-[#1E1F22]"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDaWG0Wq3VDD0TnRgY1hj9WqHKnrtjcbOeJe7AxmvVISlZyez00zWKEAMVgqGMAFYnGNmA4CiCcSDWSs4bpchQF5968wRMa4zRMiDGhXg5v5HbKIHAvtRqUEOTzae75hce3yiD2ckvx3-ddWY8_M9NMXWw423vWJy2QDSjbMMQoiurzThuG-Y3I5vUNVfvAKTDHg6tVK_S4w4tDoicsr5t1BwZfNaXOmrO010BooaMBdR660CAKJK30kIMXJrxlxqTKCSp6hcVoCy8');">
+                    </div>
+                    <div class="size-7 rounded-full bg-cover bg-center border-2 border-[#1E1F22]"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCkfBZTxw54gU21vD-g7zGesAr3YJNvmT6n4e6-kgv23SSRhfllepFqKBeMIw0ShV9TBk5W8hsCpRy6td04Ng3i7Z1uL8m-Ovx1WBQrS5qJkaX2JiFsubabJcNdjNZdnGmDlShXxvNPxlxRbnMx5TbSgaWkekKI984jGHDcTR4TDK7LZ3unWOnThVUFWsVvQ6x75Hiy9Okpip1ZgXI0I_b-n6uRrkegVtxNRfap9AO9ehCIHjLdNs-g25JNsiT01JVwcn0hsJRlllo');">
+                    </div>
+                </div>
+            </button>
+            <!-- Expanded chat window (light theme) -->
+            <div id="chat-box"
+                class="w-[360px] h-[520px] bg-white rounded-3xl shadow-2xl flex flex-col overflow-hidden border border-gray-200">
+                <div class="p-4 flex items-center justify-between border-b border-gray-100">
+                    <div class="flex items-center gap-3">
+                        <div class="flex -space-x-2">
+                            <div class="size-8 rounded-full bg-cover bg-center border-2 border-white shadow-sm"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAw_TqEbvqFEQ1eu-pdripRVdPyNxs1pM5yiErkcA9Ce3rq_oiqRWUd6oM96maxZhkoKm0KHoTOw2boks9aR1vaU5oWtO9QkkovbsbbJFvXI4fUsLwufP5-8I4-ciT7sECbWemXWmOaNpfzLbOnSkE8JrIi5xNkXGchBCCR7uDlL-hp3EDE3ZJARyNjVje3tUhmzDEr02IWr3cTyTEo7XkcR5YbpT-H4u6Ku8x96tsxS_M0mDiBszcgcb_nUbb0gE9H-3Bi5xjuJDk');">
+                            </div>
+                            <div class="size-8 rounded-full bg-cover bg-center border-2 border-white shadow-sm"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDaWG0Wq3VDD0TnRgY1hj9WqHKnrtjcbOeJe7AxmvVISlZyez00zWKEAMVgqGMAFYnGNmA4CiCcSDWSs4bpchQF5968wRMa4zRMiDGhXg5v5HbKIHAvtRqUEOTzae75hce3yiD2ckvx3-ddWY8_M9NMXWw423vWJy2QDSjbMMQoiurzThuG-Y3I5vUNVfvAKTDHg6tVK_S4w4tDoicsr5t1BwZfNaXOmrO010BooaMBdR660CAKJK30kIMXJrxlxqTKCSp6hcVoCy8');">
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-slate-900 leading-none">Study Group Chat</h4>
+                            <p class="text-[10px] text-slate-400 mt-1">24 members online</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 text-slate-400">
+                        <span
+                            class="material-symbols-outlined text-xl cursor-pointer hover:text-black transition-colors">open_in_full</span>
+                        <span
+                            onclick="document.getElementById('chat-box').style.display='none'; document.getElementById('chat-pill').style.display='flex';"
+                            class="material-symbols-outlined text-xl cursor-pointer hover:text-black transition-colors">close</span>
+                    </div>
+                </div>
+                <div class="flex-1 overflow-y-auto p-4 space-y-4 no-scrollbar bg-gray-50">
+                    <div class="flex flex-col items-start gap-2">
+                        <div class="flex gap-2 items-end">
+                            <div class="size-6 rounded-full bg-cover bg-center shadow-sm"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAw_TqEbvqFEQ1eu-pdripRVdPyNxs1pM5yiErkcA9Ce3rq_oiqRWUd6oM96maxZhkoKm0KHoTOw2boks9aR1vaU5oWtO9QkkovbsbbJFvXI4fUsLwufP5-8I4-ciT7sECbWemXWmOaNpfzLbOnSkE8JrIi5xNkXGchBCCR7uDlL-hp3EDE3ZJARyNjVje3tUhmzDEr02IWr3cTyTEo7XkcR5YbpT-H4u6Ku8x96tsxS_M0mDiBszcgcb_nUbb0gE9H-3Bi5xjuJDk');">
+                            </div>
+                            <div
+                                class="bg-white text-slate-800 text-xs px-3 py-2 rounded-2xl rounded-bl-none max-w-[80%] shadow-sm border border-gray-100">
+                                Hey everyone! Did anyone understand the part about protein folding in today's lecture?
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-end gap-1">
+                        <div
+                            class="bg-[#0066FF] text-white text-xs px-3 py-2 rounded-2xl rounded-br-none max-w-[80%] shadow-sm">
+                            It was a bit tricky. I think the chaperone proteins are the key part.</div>
+                    </div>
+                    <div class="flex flex-col items-start gap-2">
+                        <div class="flex gap-2 items-end">
+                            <div class="size-6 rounded-full bg-cover bg-center shadow-sm"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDaWG0Wq3VDD0TnRgY1hj9WqHKnrtjcbOeJe7AxmvVISlZyez00zWKEAMVgqGMAFYnGNmA4CiCcSDWSs4bpchQF5968wRMa4zRMiDGhXg5v5HbKIHAvtRqUEOTzae75hce3yiD2ckvx3-ddWY8_M9NMXWw423vWJy2QDSjbMMQoiurzThuG-Y3I5vUNVfvAKTDHg6tVK_S4w4tDoicsr5t1BwZfNaXOmrO010BooaMBdR660CAKJK30kIMXJrxlxqTKCSp6hcVoCy8');">
+                            </div>
+                            <div
+                                class="bg-white text-slate-800 text-xs px-3 py-2 rounded-2xl rounded-bl-none max-w-[80%] shadow-sm border border-gray-100">
+                                Exactly! They help ensure the protein folds into the correct 3D structure.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                        <p class="text-[10px] text-slate-400 font-medium">Dr. Sarah Jenkins joined the chat</p>
+                    </div>
+                </div>
+                <div class="p-4 border-t border-gray-100 bg-white">
+                    <div class="flex items-center gap-3 bg-gray-50 rounded-2xl px-4 py-2 border border-gray-100">
+                        <span class="material-symbols-outlined text-slate-400">mood</span>
+                        <input
+                            class="flex-1 bg-transparent border-none text-slate-900 text-xs focus:ring-0 p-0 placeholder:text-slate-400"
+                            placeholder="Nhắn tin..." type="text" />
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-slate-400 text-[20px]">mic</span>
+                            <span class="material-symbols-outlined text-slate-400 text-[20px]">image</span>
+                            <span class="material-symbols-outlined text-slate-400 text-[20px]">sticker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
