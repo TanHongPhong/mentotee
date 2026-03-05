@@ -79,6 +79,9 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+        .custom-cursor-on-hover {
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -134,82 +137,112 @@
                 </button>
             </div>
         </aside>
-        <section class="flex-1 max-w-[640px] flex flex-col gap-12">
-            <div class="flex gap-4 overflow-x-auto no-scrollbar pb-2">
-                <div class="flex flex-col items-center gap-2 flex-shrink-0 cursor-pointer group">
-                    <div class="relative size-16 rounded-full p-[2px] bg-primary-gradient transition-all">
-                        <div class="size-full rounded-full bg-white p-[2px]">
-                            <div class="size-full rounded-full bg-cover bg-center overflow-hidden relative"
-                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA14FRy6G-8UMWvB1ore5syqILrk2RhFT5zZrYnrR580GlTgNzEVBXIYR2yrJ2NFHkoXYHp6QibIRmvMaENs3e8l4cSrhfiq-wApD3_0AkVgDSSag3ugBg-9DGZZFsS1IRQlo3_pnksssjBE3LBNvdZ3dy6M_FDPUEsruklcfOzESKtxxYlpcUqz45SkbWcShyxC6Q0fiNyvTXmkb-H-jeMhXknHRgRGpCaKVvXS_JrPwZfAcuW8ITNsAjYomTZ4mHbs9FPkpQc-98");'>
-                                <div class="absolute inset-0 bg-white/40"></div>
+        <section class="flex-1 max-w-[640px] flex flex-col gap-6">
+            <div class="flex gap-4 overflow-x-auto no-scrollbar pb-2"><!-- Upload Story Card -->
+                <div class="flex flex-col flex-shrink-0 cursor-pointer group w-[calc(224px+16px)]">
+                    <div class="relative h-[149px] rounded-2xl overflow-hidden gap-1">
+                        <!-- Row 1 -->
+                        <div class="flex h-[calc(50%-2px)] gap-1">
+                            <!-- DOCUMENT -->
+                            <div class="flex-[1.6] rounded-xl flex flex-col items-center justify-center gap-0.5 hover:brightness-110 transition-all"
+                                style="background: linear-gradient(135deg, #0D9488 0%, #0891B2 100%);">
+                                <span class="material-symbols-outlined text-white text-base">description</span>
+                                <span
+                                    class="text-[7px] font-black text-white uppercase tracking-tighter">Document</span>
+                            </div>
+                            <!-- ROADMAP -->
+                            <div class="flex-[1] rounded-xl flex flex-col items-center justify-center gap-0.5 hover:brightness-110 transition-all opacity-80"
+                                style="background: linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%);">
+                                <span class="material-symbols-outlined text-white text-base">alt_route</span>
+                                <span class="text-[7px] font-black text-white uppercase tracking-tighter">Roadmap</span>
                             </div>
                         </div>
-                        <div
-                            class="absolute bottom-0 right-0 size-5 bg-black rounded-full border-2 border-white flex items-center justify-center">
-                            <span class="material-symbols-outlined text-white text-[14px] font-bold">add</span>
+                        <!-- Row 2 -->
+                        <div class="flex h-[calc(50%-2px)] gap-1 mt-1">
+                            <!-- TOOLS -->
+                            <div class="flex-[1] rounded-xl flex flex-col items-center justify-center gap-0.5 hover:brightness-110 transition-all opacity-90"
+                                style="background: linear-gradient(135deg, #2563EB 0%, #4F46E5 100%);">
+                                <span class="material-symbols-outlined text-white text-base">construction</span>
+                                <span class="text-[7px] font-black text-white uppercase tracking-tighter">Tools</span>
+                            </div>
+                            <!-- POST -->
+                            <div class="flex-[1.8] rounded-xl flex flex-col items-center justify-center gap-0.5 hover:brightness-110 transition-all"
+                                style="background: linear-gradient(135deg, #60A5FA 0%, #2563EB 100%);">
+                                <span class="material-symbols-outlined text-white text-base">send</span>
+                                <span class="text-[7px] font-black text-white uppercase tracking-tighter">Post</span>
+                            </div>
                         </div>
                     </div>
-                    <span class="text-[10px] font-medium text-slate-500 text-center w-16">Upload your file</span>
+                    <span class="mt-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest text-center">Quick
+                        Create</span>
                 </div>
-                <div class="flex flex-col items-center gap-2 flex-shrink-0 cursor-pointer group">
-                    <div class="size-16 rounded-full p-[2px] bg-primary-gradient">
-                        <div class="size-full rounded-full bg-white p-[2px]">
-                            <div class="size-full rounded-full bg-cover bg-center"
-                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAjHvVosStGx8siXbd5hwrR9q-HUyX9HWu5bTaCJ29bAdyRnMHNOStPtR4xrrx9ewPDdDgrpPRVhSDhPws14gDwp1DvthNYX0kWpCD7RtqMSVI1ToEboL_iDmCafuumlBtN_QEzgo2vdh-GR9dNDtqquYDOwR-PQmQg5aIf4MMnIiZtFam9nP9s5asEgbpLDJYygVpmZu-GVw9g5Yequ_5sgf2XPc8NQ1BsYDbnzLwK1bv62VeiC2nJaB-bnvzvZav4b7QOHBOq8Us");'>
-                            </div>
+                <!-- Story Cards -->
+                <div class="flex flex-col flex-shrink-0 cursor-pointer group">
+                    <div
+                        class="relative w-28 aspect-[3/4] rounded-2xl overflow-hidden border border-gray-100 bg-gray-50">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA14FRy6G-8UMWvB1ore5syqILrk2RhFT5zZrYnrR580GlTgNzEVBXIYR2yrJ2NFHkoXYHp6QibIRmvMaENs3e8l4cSrhfiq-wApD3_0AkVgDSSag3ugBg-9DGZZFsS1IRQlo3_pnksssjBE3LBNvdZ3dy6M_FDPUEsruklcfOzESKtxxYlpcUqz45SkbWcShyxC6Q0fiNyvTXmkb-H-jeMhXknHRgRGpCaKVvXS_JrPwZfAcuW8ITNsAjYomTZ4mHbs9FPkpQc-98");'>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent">
+                        </div>
+                        <div class="absolute top-3 left-3 flex items-center gap-1.5">
+                            <span class="text-[9px] font-bold text-white truncate w-16 uppercase">s.jenkins</span>
+                            <span class="material-symbols-outlined text-[10px] text-white">push_pin</span>
                         </div>
                     </div>
-                    <span class="text-[10px] font-medium text-slate-700">s.jenkins</span>
                 </div>
-                <div class="flex flex-col items-center gap-2 flex-shrink-0 cursor-pointer group">
-                    <div class="size-16 rounded-full p-[2px] bg-primary-gradient">
-                        <div class="size-full rounded-full bg-white p-[2px]">
-                            <div class="size-full rounded-full bg-cover bg-center"
-                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA3hAxAfPdDDawqSwqqQdbnBlqxsZ9VvXemtVK0vSrC7emd3djBpqKjLFaI4eXLDaZo-ZSBz51fN4rh7oWIyXniJanDI8KY76KU1vFz6tUKNypCCnka5aR6T_1s0ane6LQWqDZq6jrSDdamgFPolx8JMPEF1ixKbgu3fPJavmktfQC-JFx89_rAZEgaT9kbYY3XDisYyFr5t1U17lCQnNt8cdK24LIwQy9VihhFsoQhzGv6jf7EeiLqQ3aLVPeXCVE75uH-TMw8PHA");'>
-                            </div>
+                <div class="flex flex-col flex-shrink-0 cursor-pointer group">
+                    <div
+                        class="relative w-28 aspect-[3/4] rounded-2xl overflow-hidden border border-gray-100 bg-gray-50">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAsDEpE-m15oZEWpTf_NHf21WLW31rpyAcOYK2_8MKClG-MJGErLDzMn_NrD4vWsUw2X3XIZfVEKfLca3lsaxvt2cDH9b3pEGWrnl_A09wXceYyGzonHRZvQxVff3fhlN-rmblDv6XcdO5l23A_6WgvH9THIrs2T9pW8IGDomGMIa1bNWpA4CogF9_eF4IgM3ZcsGx_MgEG4nVAWNM6ZeJV-QPsKRRRWRsQiI8gPctBb591pn38WWzfVOzGDi6lLZP0EH__gB__3pY");'>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent">
+                        </div>
+                        <div class="absolute top-3 left-3 flex items-center gap-1.5">
+                            <span class="text-[9px] font-bold text-white truncate w-16 uppercase">alex_riv</span>
+                            <span class="material-symbols-outlined text-[10px] text-white">push_pin</span>
                         </div>
                     </div>
-                    <span class="text-[10px] font-medium text-slate-700">alex_riv</span>
                 </div>
-                <div class="flex flex-col items-center gap-2 flex-shrink-0 cursor-pointer group">
-                    <div class="size-16 rounded-full p-[2px] bg-primary-gradient">
-                        <div class="size-full rounded-full bg-white p-[2px]">
-                            <div class="size-full rounded-full bg-cover bg-center"
-                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCVsVGPt24ifgV2-JRJtaN7VMMaRQwoyHzRkqhx3swuf9nN3THSlZ55JnvNLbQuZ8H2ZisT8GVwyyXWwQn3ciqCsImTamoFUfdz17X9FaFEoyCE2xWpVyygEtK8BuKEqkoTB0iOHQwU8qhGTkbAliNskktwZw8XS1aRj09gEIFlmlU6VNbOIhylq4f3Ar33AFK2j2bfqSuE5jqkaTuavO1mxXE1ic2PCFGZZQEg5xqLa8IyPxvLM9S-mvFljX94zhyiF7dLKz5RwXA");'>
-                            </div>
+                <div class="flex flex-col flex-shrink-0 cursor-pointer group">
+                    <div
+                        class="relative w-28 aspect-[3/4] rounded-2xl overflow-hidden border border-gray-100 bg-gray-50">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA14FRy6G-8UMWvB1ore5syqILrk2RhFT5zZrYnrR580GlTgNzEVBXIYR2yrJ2NFHkoXYHp6QibIRmvMaENs3e8l4cSrhfiq-wApD3_0AkVgDSSag3ugBg-9DGZZFsS1IRQlo3_pnksssjBE3LBNvdZ3dy6M_FDPUEsruklcfOzESKtxxYlpcUqz45SkbWcShyxC6Q0fiNyvTXmkb-H-jeMhXknHRgRGpCaKVvXS_JrPwZfAcuW8ITNsAjYomTZ4mHbs9FPkpQc-98");'>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent">
+                        </div>
+                        <div class="absolute top-3 left-3 flex items-center gap-1.5">
+                            <span class="text-[9px] font-bold text-white truncate w-16 uppercase">m.chen</span>
                         </div>
                     </div>
-                    <span class="text-[10px] font-medium text-slate-700">m.chen</span>
                 </div>
-                <div class="flex flex-col items-center gap-2 flex-shrink-0 cursor-pointer group">
-                    <div class="size-16 rounded-full p-[2px] bg-primary-gradient">
-                        <div class="size-full rounded-full bg-white p-[2px]">
-                            <div class="size-full rounded-full bg-cover bg-center"
-                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAkDa-RFJK4bCTQU32lBl9542l_CLu9H_HH7vrpsSKWqEGZ1LDvyPWbg7bqo7yQh5GAStHZ9q0LAoXtOG0jcrqVV39_54r2yY7jXWdxLLe36qaKMp_8xwg5ZwqkQ908V_Fy7gGdVeiV8xCoxZmWs9rkjhnP_az9_C-0RuQ9Khuvy51Tuq0DOHWaf3bbu26ccX61kuHTFrwv280aivhVL7mxsR3V4fr1NXvDJUVJpdTV_6iC5MoxSKwL0daagWgRXDUR7KqqjZtaF0c");'>
-                            </div>
+                <div class="flex flex-col flex-shrink-0 cursor-pointer group">
+                    <div
+                        class="relative w-28 aspect-[3/4] rounded-2xl overflow-hidden border border-gray-100 bg-gray-50">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAsDEpE-m15oZEWpTf_NHf21WLW31rpyAcOYK2_8MKClG-MJGErLDzMn_NrD4vWsUw2X3XIZfVEKfLca3lsaxvt2cDH9b3pEGWrnl_A09wXceYyGzonHRZvQxVff3fhlN-rmblDv6XcdO5l23A_6WgvH9THIrs2T9pW8IGDomGMIa1bNWpA4CogF9_eF4IgM3ZcsGx_MgEG4nVAWNM6ZeJV-QPsKRRRWRsQiI8gPctBb591pn38WWzfVOzGDi6lLZP0EH__gB__3pY");'>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent">
+                        </div>
+                        <div class="absolute top-3 left-3 flex items-center gap-1.5">
+                            <span class="text-[9px] font-bold text-white truncate w-16 uppercase">ryan.kim</span>
                         </div>
                     </div>
-                    <span class="text-[10px] font-medium text-slate-700">ryan.kim</span>
                 </div>
-                <div class="flex flex-col items-center gap-2 flex-shrink-0 cursor-pointer group">
-                    <div class="size-16 rounded-full p-[2px] bg-primary-gradient">
-                        <div class="size-full rounded-full bg-white p-[2px]">
-                            <div class="size-full rounded-full bg-cover bg-center"
-                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCCzByfmDbBOGAYTkgFKqW5tdFEnO7kEnKAo9Awqur80MG8_DgcpavwjTV7_ELocbhGFTyILUbWkEQXwIlYsZ9ZygC6o2_ljxi-nizgsSi5jwwTVsvRIaIPeCkcY-uNMr3DAgJGeqrH6PvuqH7ycwR6CCA2wlFJPqHXjAhPnH0HzNOw3_GrjXitsJjUxqfcrc6kc0gIWzaTITfLbNJ1DWsd59wGnH6_tc2YIRlLh2-0iSVkYz0VccOtbDCgS-VdC5KgxZ_2PrcVxvQ");'>
-                            </div>
+                <div class="flex flex-col flex-shrink-0 cursor-pointer group">
+                    <div
+                        class="relative w-28 aspect-[3/4] rounded-2xl overflow-hidden border border-gray-100 bg-gray-50">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA14FRy6G-8UMWvB1ore5syqILrk2RhFT5zZrYnrR580GlTgNzEVBXIYR2yrJ2NFHkoXYHp6QibIRmvMaENs3e8l4cSrhfiq-wApD3_0AkVgDSSag3ugBg-9DGZZFsS1IRQlo3_pnksssjBE3LBNvdZ3dy6M_FDPUEsruklcfOzESKtxxYlpcUqz45SkbWcShyxC6Q0fiNyvTXmkb-H-jeMhXknHRgRGpCaKVvXS_JrPwZfAcuW8ITNsAjYomTZ4mHbs9FPkpQc-98");'>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent">
+                        </div>
+                        <div class="absolute top-3 left-3 flex items-center gap-1.5">
+                            <span class="text-[9px] font-bold text-white truncate w-16 uppercase">lily_woods</span>
                         </div>
                     </div>
-                    <span class="text-[10px] font-medium text-slate-700">lily_woods</span>
-                </div>
-                <div class="flex flex-col items-center gap-2 flex-shrink-0 cursor-pointer group">
-                    <div class="size-16 rounded-full p-[2px] bg-primary-gradient">
-                        <div class="size-full rounded-full bg-white p-[2px]">
-                            <div class="size-full rounded-full bg-cover bg-center"
-                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB73Kfl9CTz6TqOyY5mmvZpkkP1s_VPMzYNL3AI-frqdiO636wimeMjEYyx2OEpYcrog_aNQfeLbD6wPWvgs9XRK6hg-KJA8Ld2iv1LP6kq06ty_8XcXxX1BUb4Ei1xBqbap5FwZz-lwDb2uU9DtMWDObbB8gq54uzyLe5ORIc9PcFebWS6liuUIxbXRqijl318gp-nEEulI9zTq1wIzlh81lLBZjq5l7_zWRCH5TZszmZhmkd8SgmVB3mKBBAWNN4VtbHZbvN_gMA");'>
-                            </div>
-                        </div>
-                    </div>
-                    <span class="text-[10px] font-medium text-slate-700">jordan_b</span>
                 </div>
             </div>
             <article class="bg-white group">
@@ -473,7 +506,7 @@
                 </div>
                 <div class="flex flex-col gap-5">
                     <div class="flex items-center justify-between gap-3">
-                        <div class="flex items-center gap-3">
+                        <a href="mentor.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
                             <div class="size-10 rounded-full p-0.5 bg-primary-gradient">
                                 <div class="size-full rounded-full bg-white p-[1.5px]">
                                     <div class="size-full rounded-full bg-cover bg-center"
@@ -485,7 +518,7 @@
                                 <h4 class="text-xs font-bold text-slate-900 leading-tight">Sarah Jenkins</h4>
                                 <p class="text-[10px] text-slate-400 truncate w-24">Chemistry Expert</p>
                             </div>
-                        </div>
+                        </a>
                         <button
                             class="px-3 py-1.5 rounded-full border border-gray-100 text-[10px] font-bold text-slate-900 hover:bg-black hover:text-white hover:border-black transition-all">Follow</button>
                     </div>
